@@ -1,3 +1,12 @@
+body {
+  padding: 2em;
+}
+
+.sequencerContainer {
+  width: 35px;
+  display: grid;
+   grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+}
 .step {
   padding: .3em;
   text-align: center;
