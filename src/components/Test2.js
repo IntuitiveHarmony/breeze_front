@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { Song, Track, Instrument, Effect } from 'reactronica';
 import * as Tone from 'tone'
+import { Player, Buffer } from 'tone'
 
 
 // testing audio///////
@@ -16,10 +17,19 @@ gain1.connect(out);
 gain2.connect(out);
 ////////////////////////
 
+// const synth1 = new Tone.MembraneSynth().toDestination()
+// const now = Tone.now()
+// synth1.triggerAttackRelease("C4", "8n", now)
+// synth1.triggerAttackRelease("E4", "8n", now + 0.5)
+// synth1.triggerAttackRelease("G4", "8n", now + 1)
+
+// synth1.connect(gain2)
+
+
 
 const Test2 = () => {
-    const [notes, setNotes] = React.useState(null);
-    const [osc1Freq, setOsc1Freq] = React.useState(osc1.frequency.value)
+    const [notes, setNotes] = useState(null);
+    const [osc1Freq, setOsc1Freq] = useState(osc1.frequency.value)
 
     const changeOsc1Freq = (e) => {
         let {value} = e.target; // this is destructing the e.target.value
@@ -31,7 +41,7 @@ const Test2 = () => {
     
 
     const playSynth = () => {
-        let synth = new Tone.MembraneSynth.toDestination();
+        let synth = new Tone.MembraneSynth().toDestination();
         synth.triggerAttackRelease("C2", "8n")
     }
 
@@ -49,15 +59,29 @@ const Test2 = () => {
         console.log(song);
     }
 
+    const player = new Tone.Player("./drums/kick10.wav").toDestination();
+      Tone.loaded().then(() => {
+	    player.start();
+      });
+
+    const sampler = new Tone.Sampler({
+      urls: {
+        kick10: './drums/kick10.wav'
+      }
+    })
+
     // for the value of the freq range slider, its not responding like a state would.
 
     return (
         <>
         <button onClick={() => osc1.start()}>Play</button>
         <button onClick={() => osc1.stop()}>Stop</button>
+        {/* <button onClick={() => synth1.start()}>Synth Start</button> */}
+        {/* <button onClick={() => synth1.stop()}>Synth Stop</button> */}
         <input type="range" id="frequency" onChange={changeOsc1Freq}
-        value={osc1Freq} max="5000"
-        />
+        value={osc1Freq} max="5000"/>
+        <button onClick></button>
+
         <button
             onMouseDown={() => setNotes([{ name: 'C3' }])}
             onMouseUp={() => setNotes(null)}
@@ -65,6 +89,7 @@ const Test2 = () => {
             Kick
         </button>
         {/* ...other pads */}
+
   
         {/* Reactronica Components */}
         <Song>
