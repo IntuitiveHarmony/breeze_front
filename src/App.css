@@ -46,3 +46,45 @@
   display: inline-block;
   white-space: nowrap;
 }
+
+.step {
+  padding: .3em;
+  text-align: center;
+  width: 4em;
+  height: 5em;
+  border-radius: 2em;
+  margin: .1em;
+}
+.dark {
+  background-color: rgb(80, 0, 200);
+}
+.light {
+  background-color: rgb(160, 0, 200);
+}
+#active {
+  background-color: rgb(255, 170, 255);
+}
+
+.drums {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.drum {
+	background-color: rgb(174, 37, 193);
+	border-radius: 1rem;
+	width: 8em;
+	height: 4em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: .8rem;
+	margin-right: .8rem;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.drum:hover {
+	opacity: 0.7;
+}

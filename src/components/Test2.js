@@ -45,30 +45,24 @@ const Test2 = () => {
         synth.triggerAttackRelease("C2", "8n")
     }
 
-    let loopBeat;
+  let synth = new Tone.Synth({ oscillator: { type: "square8" } }).toDestination()
+  let pluck = new Tone.PluckSynth().toDestination()
 
-    const setupLoop = (e) => {
-        let bassSynth = new Tone.MembraneSynth().toDestination()
+ const playNote = (note) => {
+   console.log(note)
+   synth.triggerAttackRelease(note, "16n")
+ }
 
-        loopBeat = new Tone.Loop(song, '4n');
-        Tone.Transport.start();
-        loopBeat.start(0);
+    const playPluck = (note) => {
+    pluck.triggerAttackRelease(note, "16n")
     }
 
-    const song = (time) => {
-        console.log(song);
-    }
 
-    const player = new Tone.Player("./drums/kick10.wav").toDestination();
-      Tone.loaded().then(() => {
-	    player.start();
-      });
+ const handleNoteChange = () => {
 
-    const sampler = new Tone.Sampler({
-      urls: {
-        kick10: './drums/kick10.wav'
-      }
-    })
+ }
+
+
 
     // for the value of the freq range slider, its not responding like a state would.
 
@@ -83,12 +77,23 @@ const Test2 = () => {
         <button onClick></button>
 
         <button
-            onMouseDown={() => setNotes([{ name: 'C3' }])}
-            onMouseUp={() => setNotes(null)}
+            // onMouseDown={() => setNotes([{ name: 'C3' }])}
+            // onMouseUp={() => setNotes(null)}
         >
             Kick
         </button>
         {/* ...other pads */}
+        <br />
+    <div onClick={() => {playNote('C5')}} className='step dark'>
+    <br/>
+    <select onChange={handleNoteChange}>
+      <option value='C4'>C4</option>
+      <option value='E4'>E4</option>
+      <option value='G4'>G4</option>
+      <option value='A4'>A4</option>
+    </select>
+    </div>
+    <button onClick={() => {playPluck('C5')}}>Pluck</button>
 
   
         {/* Reactronica Components */}
