@@ -5,6 +5,7 @@ import axios from 'axios'
 import * as Tone from 'tone'
 import Test2 from './components/Test2'
 import Synth from './components/Synth'
+import MonoSynth from './components/MonoSynth'
 
 function App() {
   const [sequences, setSequences] = useState([])
@@ -28,6 +29,7 @@ function App() {
       <h4></h4>
       <Test2 />
       <Synth />
+      <MonoSynth />
     </>
   );
 }

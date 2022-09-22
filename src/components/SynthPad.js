@@ -21,6 +21,9 @@ const SynthPad = () => {
  const handleDelayFeedback = (event) => {
    setDelayFeedback(event.target.value)
  }
+ const handleDelayTime = (event) => {
+   setDelay(event.target.value)
+ }
   return (
     <>
     <div onClick={() => {playNote(note)}} className='step dark'>
@@ -32,8 +35,10 @@ const SynthPad = () => {
       <option value='A3'>A3</option>
     </select>
     </div>
-    <label>Delay Feedback {delayFeedback}</label><br/>
+    <label>Feedback {delayFeedback}</label><br/>
     <input onChange={handleDelayFeedback} type='range' step='.1' min='0' max='.9' ></input>
+    <label>Delay: {delay}n</label><br/>
+    <input onChange={handleDelayTime} type='range' step='1' min='1' max='64' ></input>
     </>
   )
 }

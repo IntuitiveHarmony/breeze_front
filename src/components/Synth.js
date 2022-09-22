@@ -9,10 +9,7 @@ const Synth = () => {
     <>
       <div className='sequencerContainer'>
         <SynthPad />
-        <SynthPad />
-        <SynthPad />
-        <SynthPad />
-        <SynthPad />
+      
       </div>
     </>
   )
