@@ -27,8 +27,8 @@ const Test2 = () => {
         osc1.frequency.value = value; // pulled value off to assign a value to freq
     }
 
-    
-    
+
+
 
     const playSynth = () => {
         let synth = new Tone.MembraneSynth.toDestination();
@@ -53,7 +53,7 @@ const Test2 = () => {
 
     return (
         <>
-        <button onClick={() => osc1.start()}>Play</button>
+        <button onClick={playSynth}>Play</button>
         <button onClick={() => osc1.stop()}>Stop</button>
         <input type="range" id="frequency" onChange={changeOsc1Freq}
         value={osc1Freq} max="5000"
@@ -65,7 +65,7 @@ const Test2 = () => {
             Kick
         </button>
         {/* ...other pads */}
-  
+
         {/* Reactronica Components */}
         <Song>
           <Track>
