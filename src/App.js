@@ -8,6 +8,7 @@ import Test2 from './components/Test2'
 import Synth from './components/Synth'
 import MonoSynth from './components/MonoSynth'
 import MonoSynth2 from './components/MonoSynth2'
+import GetSequences from './components/GetSequences'
 
 function App() {
   const [sequences, setSequences] = useState([])
@@ -18,15 +19,15 @@ function App() {
   //---------------------------------------------
   //  GET SEQUENCE ROUTE
   //---------------------------------------------
-  const getSequences = () => {
-    axios
-    .get('https://breeze-back.herokuapp.com/api/sequences')
-    .then(
-      (response) => setSequences(response.data),
-      (err) => console.error(err)
-    )
-   .catch((error) => console.error(error))
-  }
+  // const getSequences = () => {
+  //   axios
+  //   .get('https://breeze-back.herokuapp.com/api/sequences')
+  //   .then(
+  //     (response) => setSequences(response.data),
+  //     (err) => console.error(err)
+  //   )
+  //  .catch((error) => console.error(error))
+  // }
 
 
   const handleVolume = (e) => {
@@ -41,6 +42,7 @@ function App() {
   }
   return (
     <>
+    <GetSequences />
       <h1>Breeze</h1>
       <h4></h4>
     {/*  <Test2 /> */}

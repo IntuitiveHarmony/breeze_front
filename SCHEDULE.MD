@@ -16,12 +16,12 @@
 -research and experiment with tone.js and reactronica
 
 9/22/22
--researching and redux
+-researching and experimenting with redux
 -research and experiment with tone.js and reactronica
--making headway with reactronica, tone is more difficult to pickup
+-making quicker headway with reactronica, tone is more difficult to pickup
 
-9/22/22
--researching and redux
+9/23/22
+-researching and experimenting with redux
 -research and experiment with tone.js and reactronica
 -tried npm react-music which seems broken :(
 -working on axios-redux combo   
