@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { Song, Track, Instrument, Effect } from 'reactronica';
 import * as Tone from 'tone'
+import { Player, Buffer } from 'tone'
 
 
 // testing audio///////
@@ -16,10 +17,19 @@ gain1.connect(out);
 gain2.connect(out);
 ////////////////////////
 
+// const synth1 = new Tone.MembraneSynth().toDestination()
+// const now = Tone.now()
+// synth1.triggerAttackRelease("C4", "8n", now)
+// synth1.triggerAttackRelease("E4", "8n", now + 0.5)
+// synth1.triggerAttackRelease("G4", "8n", now + 1)
+
+// synth1.connect(gain2)
+
+
 
 const Test2 = () => {
-    const [notes, setNotes] = React.useState(null);
-    const [osc1Freq, setOsc1Freq] = React.useState(osc1.frequency.value)
+    const [notes, setNotes] = useState(null);
+    const [osc1Freq, setOsc1Freq] = useState(osc1.frequency.value)
 
     const changeOsc1Freq = (e) => {
         let {value} = e.target; // this is destructing the e.target.value
@@ -31,23 +41,28 @@ const Test2 = () => {
 
 
     const playSynth = () => {
-        let synth = new Tone.MembraneSynth.toDestination();
+        let synth = new Tone.MembraneSynth().toDestination();
         synth.triggerAttackRelease("C2", "8n")
     }
 
-    let loopBeat;
+  let synth = new Tone.Synth({ oscillator: { type: "square8" } }).toDestination()
+  let pluck = new Tone.PluckSynth().toDestination()
 
-    const setupLoop = (e) => {
-        let bassSynth = new Tone.MembraneSynth().toDestination()
+ const playNote = (note) => {
+   console.log(note)
+   synth.triggerAttackRelease(note, "16n")
+ }
 
-        loopBeat = new Tone.Loop(song, '4n');
-        Tone.Transport.start();
-        loopBeat.start(0);
+    const playPluck = (note) => {
+    pluck.triggerAttackRelease(note, "16n")
     }
 
-    const song = (time) => {
-        console.log(song);
-    }
+
+ const handleNoteChange = () => {
+
+ }
+
+
 
     // for the value of the freq range slider, its not responding like a state would.
 
@@ -55,17 +70,36 @@ const Test2 = () => {
         <>
         <button onClick={playSynth}>Play</button>
         <button onClick={() => osc1.stop()}>Stop</button>
+        {/* <button onClick={() => synth1.start()}>Synth Start</button> */}
+        {/* <button onClick={() => synth1.stop()}>Synth Stop</button> */}
         <input type="range" id="frequency" onChange={changeOsc1Freq}
-        value={osc1Freq} max="5000"
-        />
+        value={osc1Freq} max="5000"/>
+        <button onClick></button>
+
         <button
-            onMouseDown={() => setNotes([{ name: 'C3' }])}
-            onMouseUp={() => setNotes(null)}
+            // onMouseDown={() => setNotes([{ name: 'C3' }])}
+            // onMouseUp={() => setNotes(null)}
         >
             Kick
         </button>
         {/* ...other pads */}
+<<<<<<< HEAD
 
+=======
+        <br />
+    <div onClick={() => {playNote('C5')}} className='step dark'>
+    <br/>
+    <select onChange={handleNoteChange}>
+      <option value='C4'>C4</option>
+      <option value='E4'>E4</option>
+      <option value='G4'>G4</option>
+      <option value='A4'>A4</option>
+    </select>
+    </div>
+    <button onClick={() => {playPluck('C5')}}>Pluck</button>
+
+  
+>>>>>>> bb45c3746f75224335fa734f4cbb517df42bbbfa
         {/* Reactronica Components */}
         <Song>
           <Track>
