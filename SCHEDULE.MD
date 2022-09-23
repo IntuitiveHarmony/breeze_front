@@ -24,3 +24,23 @@
 -researching and redux
 -research and experiment with tone.js and reactronica
 -tried npm react-music which seems broken :(
+-working on axios-redux combo   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
