@@ -8,7 +8,6 @@ import Drumkit from './components/Drumkit';
 import Synth from './components/Synth'
 import MonoSynth from './components/MonoSynth'
 import MonoSynth2 from './components/MonoSynth2'
-import GetSequences from './components/GetSequences'
 
 
 
