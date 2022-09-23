@@ -15,8 +15,5 @@ const Synth = () => {
     </>
   )
 }
-<<<<<<< HEAD
+
 export default Synth;
-=======
-export default Synth;
->>>>>>> bb45c3746f75224335fa734f4cbb517df42bbbfa
