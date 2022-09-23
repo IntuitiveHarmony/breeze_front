@@ -3,6 +3,7 @@ import { Song, Track, Instrument, Effect } from 'reactronica';
 
 const MonoSynthStep = (props) => {
 
+
   return (
     <>
     {props.playHead === props.index ?
