@@ -1,7 +1,19 @@
 body {
   padding: 2em;
 }
-
+.synthGrid {
+  display: flex;
+}
+.synthStep {
+  width: 3em;
+  height: 3em;
+  border-radius: 10px;
+  border: solid rgb(100, 0, 255) 1px;
+  background-color: rgb(100, 100, 200)
+}
+.active {
+  background-color: rgb(100, 200, 255)
+}
 .sequencerContainer {
   width: 35px;
   display: grid;

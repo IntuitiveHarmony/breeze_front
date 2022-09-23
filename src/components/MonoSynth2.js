@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import { Song, Track, Instrument, Effect } from 'reactronica';
-
+import MonoSynthStep from './MonoSynthStep'
 
 
 const MonoSynth2 = () => {
@@ -11,6 +11,7 @@ const MonoSynth2 = () => {
   const [steps, setSteps] = useState([
     {name: 'Eb5'}, {name: 'C#5'}, {name: null}, {name: 'D#5'}, {name: 'G#5'}, {name: 'Gb5'}, {name: 'F#5'}, {name: null}
   ])
+  const [playHead, setPlayHead] = useState(0)
   const [delayWet, setDelayWet] = useState(0)
   const [monoVolume, setMonoVolume] = useState(-10)
 
@@ -26,19 +27,29 @@ const MonoSynth2 = () => {
 
   return (
     <>
-    <hr/>
+
 
       <Track steps={steps} volume={monoVolume} onStepPlay={(step, index) => {
+          setPlayHead(index)
           console.log(step, index);
         }}>
         <Instrument type='synth' />
         <Effect type='feedbackDelay' wet={delayWet} />
       </Track>
 
+
+      <hr/>
       <label>Mono2 Delay: </label>
-    <input onChange={handleDelayFeedback} type='range' step='.1' min='0' max='.9' ></input>
-    <label>Mono2 Volume: </label>
-  <input onChange={handleMonoVolume} type='range' step='1' min='-100' max='0' ></input>
+      <input onChange={handleDelayFeedback} type='range' step='.1' min='0' max='.9' ></input>
+      <label>Mono2 Volume: </label>
+      <input onChange={handleMonoVolume} type='range' step='1' min='-100' max='0' ></input>
+      <div className='synthGrid'>
+      {steps.map((step, index) => {
+        return (
+          <MonoSynthStep index={index} step={step} playHead={playHead}/>
+        )
+      })}
+      </div>
     </>
   )
 }
