@@ -6,7 +6,7 @@ const MonoSynthStep = (props) => {
   return (
     <>
     {props.playHead === props.index ?
-      <div className='synthStep active'>
+      <div className='synthStep playHead'>
         <p>{props.step.name}</p>
       </div>
       :

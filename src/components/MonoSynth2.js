@@ -9,7 +9,7 @@ const MonoSynth2 = () => {
   //   delay: [  0 ,   0 ,    0,    0,   0,    0,    0,   0 ]
   // })
   const [steps, setSteps] = useState([
-    {name: 'Eb5'}, {name: 'C#5'}, {name: null}, {name: 'D#5'}, {name: 'G#5'}, {name: 'Gb5'}, {name: 'F#5'}, {name: null}
+    {name: 'Eb5'}, {name: 'C#5'}, {name: null}, {name: 'D#5'}, {name: 'G#5'}, {name: 'Gb5'}
   ])
   const [playHead, setPlayHead] = useState(0)
   const [delayWet, setDelayWet] = useState(0)
@@ -33,7 +33,7 @@ const MonoSynth2 = () => {
           setPlayHead(index)
           console.log(step, index);
         }}>
-        <Instrument type='synth' />
+        <Instrument type='duoSynth' />
         <Effect type='feedbackDelay' wet={delayWet} />
       </Track>
 

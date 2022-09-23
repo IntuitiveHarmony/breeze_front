@@ -1,5 +1,7 @@
 body {
   padding: 2em;
+  background-color: rgb(35, 35, 35);
+  color: white;
 }
 .synthGrid {
   display: flex;
@@ -8,8 +10,11 @@ body {
   width: 3em;
   height: 3em;
   border-radius: 10px;
-  border: solid rgb(100, 0, 255) 1px;
+  border: solid rgb(100, 0, 255) 2px;
   background-color: rgb(100, 100, 200)
+}
+.playHead {
+  border: solid magenta 2px;
 }
 .active {
   background-color: rgb(100, 200, 255)

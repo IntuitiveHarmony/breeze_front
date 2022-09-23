@@ -13,7 +13,10 @@ const MonoSynth = () => {
   ])
   const [playHead, setPlayHead] = useState(0)
   const [delayWet, setDelayWet] = useState(0)
+  const [filterWet, setFilterWet] = useState(0)
   const [monoVolume, setMonoVolume] = useState(-10)
+
+
 
 
 
@@ -22,6 +25,9 @@ const MonoSynth = () => {
   }
   const handleMonoVolume = (e) => {
     setMonoVolume(e.target.value)
+  }
+  const handleFilter = (e) => {
+    setFilterWet(e.target.value)
   }
 
 
@@ -33,13 +39,16 @@ const MonoSynth = () => {
           setPlayHead(index)
           console.log(step, index);
         }}>
-        <Instrument type='synth' />
+        <Instrument type='duoSynth' />
         <Effect type='feedbackDelay' wet={delayWet} />
+        <Effect type='autoWah' wet={filterWet} />
       </Track>
 
       <hr/>
       <label>Mono Delay: </label>
       <input onChange={handleDelayFeedback} type='range' step='.1' min='0' max='.9' ></input>
+      <label>Mono Filter: </label>
+      <input onChange={handleFilter} type='range' step='.1' min='0' max='1' ></input>
       <label>Mono Volume: </label>
       <input onChange={handleMonoVolume} type='range' step='1' min='-100' max='0' ></input>
       <div className='synthGrid'>
