@@ -3,13 +3,13 @@ import { Song, Track, Instrument, Effect } from 'reactronica';
 
 
 
-const MonoSynth = () => {
+const MonoSynth2 = () => {
   // const [monoGrid, setMonoGrid] = useState({
   //   steps: ['C3', 'E3', null, 'E3','C3', 'E3', 'B2', 'E3'],
   //   delay: [  0 ,   0 ,    0,    0,   0,    0,    0,   0 ]
   // })
   const [steps, setSteps] = useState([
-    {name: 'C#3'}, {name: 'Eb3'}, {name: null}, {name: 'Eb3'}, {name: 'C#3'}, {name: 'Eb3'}, {name: 'Bb2'}, {name: 'Eb3'}
+    {name: 'Eb5'}, {name: 'C#5'}, {name: null}, {name: 'D#5'}, {name: 'G#5'}, {name: 'Gb5'}, {name: 'F#5'}, {name: null}
   ])
   const [delayWet, setDelayWet] = useState(0)
   const [monoVolume, setMonoVolume] = useState(-10)
@@ -31,15 +31,15 @@ const MonoSynth = () => {
       <Track steps={steps} volume={monoVolume} onStepPlay={(step, index) => {
           console.log(step, index);
         }}>
-        <Instrument type='pluckSynth' />
+        <Instrument type='synth' />
         <Effect type='feedbackDelay' wet={delayWet} />
       </Track>
 
-      <label>Mono Delay: </label>
+      <label>Mono2 Delay: </label>
     <input onChange={handleDelayFeedback} type='range' step='.1' min='0' max='.9' ></input>
-    <label>Mono Volume: </label>
+    <label>Mono2 Volume: </label>
   <input onChange={handleMonoVolume} type='range' step='1' min='-100' max='0' ></input>
     </>
   )
 }
-export default MonoSynth;
+export default MonoSynth2;

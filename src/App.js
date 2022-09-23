@@ -7,6 +7,7 @@ import * as Tone from 'tone'
 import Test2 from './components/Test2'
 import Synth from './components/Synth'
 import MonoSynth from './components/MonoSynth'
+import MonoSynth2 from './components/MonoSynth2'
 
 function App() {
   const [sequences, setSequences] = useState([])
@@ -46,7 +47,9 @@ function App() {
     <Song isPlaying={isPlaying} volume={volume} bpm={tempo}>
       <Synth />
       <MonoSynth />
-    </Song>
+      <MonoSynth2 />
+    </Song><br/>
+    <hr/>
       {isPlaying ? <button onClick={() => play()}>Stop</button> : <button onClick={() => play()}>Play</button> }
       <label>Main volume</label>
       <input onChange={handleVolume} type='range' step='1' min='-100' max='0' ></input>
