@@ -3,7 +3,6 @@ import axios from 'axios'
 
 const SEQUENCES_URL = 'https://breeze-back.herokuapp.com/api/sequences'
 
-
 const initialState = {
   sequences: [],
   status: 'idle',
@@ -16,6 +15,15 @@ export const fetchSequences = createAsyncThunk('sequences/fetchSequences', async
     return response.data
   } catch (err) {
     return err.message
+  }
+})
+
+export const addNewSequence = createAsyncThunk('sequences/addNewSequence', async (initialSequence) => {
+  try {
+    const response = await axios.post(SEQUENCES_URL, initialSequence)
+    return response.data
+  } catch (err) {
+    return err.messasge
   }
 })
 
@@ -52,6 +60,11 @@ const sequencesSlice = createSlice({
         state.status = 'failed'
         state.error = action.error.message
       })
+      .addCase(addNewSequence.fulfilled, (state, action)=> {
+        console.log(action.payload)
+        state.sequences.push(action.payload)
+      })
+
   }
 })
 

@@ -2,24 +2,33 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { nanoid } from '@reduxjs/toolkit'
 
-import { sequenceAdded } from './sequencesSlice'
+import { addNewSequence } from './sequencesSlice'
 
 const AddSequenceForm = () => {
   const dispatch = useDispatch()
 
   const [name, setName] = useState('')
   const [tempo, setTempo] = useState('')
+  const [addRequestStatus, setAddRequestStatus] = useState('idle')
 
   const onNameChanged = e => setName(e.target.value)
   const onTempoChanged = e => setTempo(e.target.value)
 
+  const canSave = Boolean(name) && addRequestStatus === 'idle'
+
   const onSaveSequenceClicked = () => {
-    if (name && tempo) {
-      dispatch(
-        sequenceAdded(name, tempo)
-      )
-      setName('')
-      setTempo('')
+    if (canSave) {
+      try {
+        setAddRequestStatus('Pending')
+        dispatch(addNewSequence({name, tempo})).unwrap()
+
+        setName('')
+        setTempo('')
+      } catch (err) {
+        console.error('Failed to save the Sequence', err)
+      } finally {
+        setAddRequestStatus('idle')
+      }
     }
   }
 
