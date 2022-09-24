@@ -4,6 +4,8 @@ import './App.css';
 import axios from 'axios'
 import { Song, Track, Instrument, Effect } from 'reactronica';
 import * as Tone from 'tone'
+import SequencesList from './features/sequences/SequencesList'
+import AddSequenceForm from './features/sequences/AddSequenceForm'
 import Test2 from './components/Test2'
 import Synth from './components/Synth'
 import MonoSynth from './components/MonoSynth'
@@ -42,6 +44,8 @@ function App() {
   }
   return (
     <>
+    <SequencesList />
+    <AddSequenceForm/>
     <GetSequences />
       <h1>Breeze</h1>
       <h4></h4>
