@@ -13,7 +13,7 @@ const initialState = {
 export const fetchSequences = createAsyncThunk('sequences/fetchSequences', async () => {
   try {
     const response = await axios.get(SEQUENCES_URL)
-    return [...response.data]
+    return response.data
   } catch (err) {
     return err.message
   }
@@ -46,7 +46,7 @@ const sequencesSlice = createSlice({
       })
       .addCase(fetchSequences.fulfilled, (state, action) => {
         state.status = 'succeeded'
-        state.sequences.push(action.payload)
+        state.sequences = [...action.payload]
       })
       .addCase(fetchSequences.rejected, (state, action) => {
         state.status = 'failed'

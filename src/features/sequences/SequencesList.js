@@ -25,7 +25,13 @@ const SequencesList = () => {
   if (sequencesStatus == 'loading') {
     content = <p>'Loading...'</p>
   } else if (sequencesStatus == 'succeeded') {
-    content = <p>'succeded'</p>
+    content = sequences.map((sequence, index) => {
+      return (
+      <>
+        <SequencesExcerpt sequence={sequence}/>
+      </>
+    )
+    })
   } else if (sequencesStatus == 'failed') {
     content = <p>{error}</p>
   }

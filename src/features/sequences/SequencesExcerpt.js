@@ -1,10 +1,10 @@
 import React from 'react'
 
-const SequencesExcerpt = ( {sequence} ) => {
+const SequencesExcerpt = ( props ) => {
     return (
       <article>
-        <h3>{sequence.name}</h3>
-        <p>{sequence.tempo}</p>
+      <h3>{props.sequence.name}</h3>
+      <p>Tempo: {props.sequence.tempo}</p>
       </article>
     )
 }
