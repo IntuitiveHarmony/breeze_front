@@ -23,15 +23,22 @@ const SequencesList = () => {
 
   let content
   if (sequencesStatus == 'loading') {
-    content = <p>'Loading...'</p>
+    content = <p>Connecting to Sequences...</p>
   } else if (sequencesStatus == 'succeeded') {
-    content = sequences.map((sequence, index) => {
-      return (
-      <>
-        <SequencesExcerpt sequence={sequence}/>
-      </>
-    )
-    })
+    content =
+    <>
+      <label>Restore Previous  </label>
+      <select>
+        <option disabled='true'>Select Sequence</option>
+        {sequences.map((sequence, index) => {
+          return (
+            <>
+              <SequencesExcerpt sequence={sequence}/>
+            </>
+          )
+        })}
+      </select>
+    </>
   } else if (sequencesStatus == 'failed') {
     content = <p>{error}</p>
   }
@@ -41,7 +48,6 @@ const SequencesList = () => {
 
   return (
       <div>
-        <h2>Sequences:</h2>
         {content}
       </div>
   )

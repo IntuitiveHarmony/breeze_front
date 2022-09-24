@@ -46,19 +46,19 @@ const AddSequenceForm = () => {
                   name='sequenceName'
                   value={name}
                   onChange={onNameChanged}
-                />
-                <label htmlFor='sequenceTempo'>Tempo Name: </label>
+                /><br/>
+                <label htmlFor='sequenceTempo'>Tempo: </label>
                 <input
                   type='text'
                   id='sequenceTempo'
                   name='sequenceTempo'
                   value={tempo}
                   onChange={onTempoChanged}
-                />
+                /><br/>
                 <button
                   type='button'
                   onClick={onSaveSequenceClicked}
-                >Save Sequence</button>
+                >Create New Sequence</button>
               </form>
           </details>
 

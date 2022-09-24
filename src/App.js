@@ -45,18 +45,18 @@ function App() {
     setIsPLaying(!isPlaying)
   }
   return (
-    <>
-    <SequencesList />
-    <AddSequenceForm/>
+      <>
       <h1>Breeze</h1>
-      <h4></h4>
-    {/*  <Test2 /> */}
-    <Song isPlaying={isPlaying} volume={volume} bpm={tempo}>
-      <Synth />
-      <MonoSynth />
-      <MonoSynth2 />
-    </Song><br/>
-    <hr/>
+      <AddSequenceForm/>
+      <SequencesList />
+
+      {/*  <Test2 /> */}
+      <Song isPlaying={isPlaying} volume={volume} bpm={tempo}>
+        <Synth />
+        <MonoSynth />
+        <MonoSynth2 />
+      </Song><br/>
+      <hr/>
       {isPlaying ? <button onClick={() => play()}>Stop</button> : <button onClick={() => play()}>Play</button> }
       <label>Main volume</label>
       <input onChange={handleVolume} type='range' step='1' min='-100' max='0' ></input>
