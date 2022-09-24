@@ -16,11 +16,7 @@ const AddSequenceForm = () => {
   const onSaveSequenceClicked = () => {
     if (name && tempo) {
       dispatch(
-        sequenceAdded({
-          id: nanoid(),
-          name,
-          tempo
-        })
+        sequenceAdded(name, tempo)
       )
       setName('')
       setTempo('')
