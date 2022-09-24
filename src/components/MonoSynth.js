@@ -56,7 +56,9 @@ const MonoSynth = () => {
       </div>
     </>
   )
+
 }
+
 
 
 

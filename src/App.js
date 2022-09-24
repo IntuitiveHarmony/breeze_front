@@ -6,10 +6,13 @@ import { Song, Track, Instrument, Effect } from 'reactronica';
 import * as Tone from 'tone'
 import SequencesList from './features/sequences/SequencesList'
 import AddSequenceForm from './features/sequences/AddSequenceForm'
-import Test2 from './components/Test2'
+import Drumkit from './components/Drumkit';
 import Synth from './components/Synth'
 import MonoSynth from './components/MonoSynth'
 import MonoSynth2 from './components/MonoSynth2'
+
+
+
 
 function App() {
   const [sequences, setSequences] = useState([])
@@ -59,6 +62,8 @@ function App() {
       <input onChange={handleVolume} type='range' step='1' min='-100' max='0' ></input>
       <label>Tempo: {tempo}bpm</label>
       <input onChange={handleTempo} type='range' step='1' min='10' max='700' ></input>
+      <hr />
+      <Drumkit />
     </>
   );
 }
