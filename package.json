@@ -14,7 +14,9 @@
     "react-redux": "^8.0.2",
     "react-scripts": "5.0.1",
     "reactronica": "^0.7.0",
-    "sass": "^1.55.0",
+    "redux": "^4.2.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.1",
     "tone": "^14.7.77",
     "web-vitals": "^2.1.4"
   },

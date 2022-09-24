@@ -37,8 +37,8 @@ const Test2 = () => {
         osc1.frequency.value = value; // pulled value off to assign a value to freq
     }
 
-    
-    
+
+
 
     const playSynth = () => {
         let synth = new Tone.MembraneSynth().toDestination();
@@ -68,7 +68,7 @@ const Test2 = () => {
 
     return (
         <>
-        <button onClick={() => osc1.start()}>Play</button>
+        <button onClick={playSynth}>Play</button>
         <button onClick={() => osc1.stop()}>Stop</button>
         {/* <button onClick={() => synth1.start()}>Synth Start</button> */}
         {/* <button onClick={() => synth1.stop()}>Synth Stop</button> */}
@@ -83,6 +83,9 @@ const Test2 = () => {
             Kick
         </button>
         {/* ...other pads */}
+<<<<<<< HEAD
+
+=======
         <br />
     <div onClick={() => {playNote('C5')}} className='step dark'>
     <br/>
@@ -96,6 +99,7 @@ const Test2 = () => {
     <button onClick={() => {playPluck('C5')}}>Pluck</button>
 
   
+>>>>>>> bb45c3746f75224335fa734f4cbb517df42bbbfa
         {/* Reactronica Components */}
         <Song>
           <Track>

@@ -17,7 +17,10 @@ function App() {
   const [isPlaying, setIsPLaying] = useState(false)
   const [tempo, setTempo] = useState(100)
   const [volume, setVolume] = useState()
-  
+
+  //---------------------------------------------
+  //  GET SEQUENCE ROUTE
+  //---------------------------------------------
   const getSequences = () => {
     axios
     .get('https://breeze-back.herokuapp.com/api/sequences')
@@ -39,7 +42,6 @@ function App() {
   const play = () => {
     setIsPLaying(!isPlaying)
   }
-
   return (
     <>
       <h1>Breeze</h1>
