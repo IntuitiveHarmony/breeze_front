@@ -35,29 +35,29 @@ const MonoSynth = () => {
     <>
 
 
-      <Track steps={steps} volume={monoVolume} onStepPlay={(step, index) => {
-          setPlayHead(index)
-          console.log(step, index);
-        }}>
-        <Instrument type='duoSynth' />
-        <Effect type='feedbackDelay' wet={delayWet} />
-        <Effect type='autoWah' wet={filterWet} />
-      </Track>
+        <Track steps={steps} volume={monoVolume} onStepPlay={(step, index) => {
+            setPlayHead(index)
+            console.log(step, index);
+            }}>
+            <Instrument type='duoSynth' />
+            <Effect type='feedbackDelay' wet={delayWet} />
+            <Effect type='autoWah' wet={filterWet} />
+        </Track>
 
-      <hr/>
-      <label>Mono Delay: </label>
-      <input onChange={handleDelayFeedback} type='range' step='.1' min='0' max='.9' ></input>
-      <label>Mono Filter: </label>
-      <input onChange={handleFilter} type='range' step='.1' min='0' max='1' ></input>
-      <label>Mono Volume: </label>
-      <input onChange={handleMonoVolume} type='range' step='1' min='-100' max='0' ></input>
-      <div className='synthGrid'>
-        {steps.map((step, index) => {
-          return (
-            <MonoSynthStep index={index} step={step} playHead={playHead}/>
-          )
-        })}
-      </div>
+        <hr/>
+        <label>Mono Delay: </label>
+        <input onChange={handleDelayFeedback} type='range' step='.1' min='0' max='.9' ></input>
+        <label>Mono Filter: </label>
+        <input onChange={handleFilter} type='range' step='.1' min='0' max='1' ></input>
+        <label>Mono Volume: </label>
+        <input onChange={handleMonoVolume} type='range' step='1' min='-100' max='0' ></input>
+        <div className='synthGrid'>
+            {steps.map((step, index) => {
+            return (
+                <MonoSynthStep index={index} step={step} playHead={playHead}/>
+            )
+            })}
+        </div>
     </>
   )
 

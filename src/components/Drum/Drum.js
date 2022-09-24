@@ -23,7 +23,7 @@ const Drum = (props) => {
 	}, []);
 
   return (
-    <div className={`drum ${playing ? "playing" : ""}`} onClick={play}>
+    <div className={`${playing ? "playing" : ""} `} onClick={play}>
 		  <div className="key">{props.instrument}</div>
 	  </div>
   )

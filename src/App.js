@@ -8,6 +8,7 @@ import Drumkit from './components/Drumkit';
 import Synth from './components/Synth'
 import MonoSynth from './components/MonoSynth'
 import MonoSynth2 from './components/MonoSynth2'
+import Login from './components/Login'
 
 
 
@@ -45,6 +46,7 @@ function App() {
   return (
     <>
       <h1>Breeze</h1>
+      
       <h4></h4>
     <Song isPlaying={isPlaying} volume={volume} bpm={tempo}>
       <Synth />

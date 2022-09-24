@@ -26,14 +26,33 @@ const Drumkit = () => {
 			sound: require("./sounds/closedhat1.mp3"),
 			key: "J",
             instrument: "J -clap 1"
-        }
+        },
+        {
+            name: "clap1",
+			sound: require("./sounds/closedhat1.mp3"),
+			key: "J",
+            instrument: "J -clap 1"
+        },
+        {
+            name: "clap1",
+			sound: require("./sounds/closedhat1.mp3"),
+			key: "J",
+            instrument: "J -clap 1"
+        },
+        {
+            name: "clap1",
+			sound: require("./sounds/closedhat1.mp3"),
+			key: "J",
+            instrument: "J -clap 1"
+        },
+        
 
         ])
 
   return (
     <div>
-        <h1>React Drumkit</h1>
-			<div className="drums">
+        <h1>BreezyBeatpad</h1>
+			<div className="drums kit-wrapper">
 				{sounds.map((sound, i) => (
 					<Drum key={i} letter={sound.key} sound={sound.sound} instrument={sound.instrument} />
 				))}

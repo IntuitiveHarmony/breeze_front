@@ -5,15 +5,15 @@ import SynthPad from './SynthPad'
 const Synth = () => {
 
 
-  return (
-    <>
-      <div className='sequencerContainer'>
-        <SynthPad />
-        <SynthPad />
+    return (
+        <>
+        <div className='sequencerContainer'>
+            <SynthPad />
+            <SynthPad />
 
-      </div>
-    </>
-  )
+        </div>
+        </>
+    )
 }
 
 export default Synth;
