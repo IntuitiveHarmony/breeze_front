@@ -42,10 +42,8 @@ function App() {
 
   return (
     <>
-    <GetSequences />
       <h1>Breeze</h1>
       <h4></h4>
-    {/*  <Test2 /> */}
     <Song isPlaying={isPlaying} volume={volume} bpm={tempo}>
       <Synth />
       <MonoSynth />
