@@ -11,7 +11,7 @@ const AddSequenceForm = () => {
   const [tempo, setTempo] = useState('')
 
   const onNameChanged = e => setName(e.target.value)
-  const onTempoChanged = e => setTempo(Number(e.target.value))
+  const onTempoChanged = e => setTempo(e.target.value)
 
   const onSaveSequenceClicked = () => {
     if (name && tempo) {

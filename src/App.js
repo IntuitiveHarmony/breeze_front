@@ -10,7 +10,6 @@ import Test2 from './components/Test2'
 import Synth from './components/Synth'
 import MonoSynth from './components/MonoSynth'
 import MonoSynth2 from './components/MonoSynth2'
-import GetSequences from './components/GetSequences'
 
 function App() {
   const [sequences, setSequences] = useState([])
@@ -46,7 +45,6 @@ function App() {
     <>
     <SequencesList />
     <AddSequenceForm/>
-    <GetSequences />
       <h1>Breeze</h1>
       <h4></h4>
     {/*  <Test2 /> */}
