@@ -4,6 +4,8 @@ import './App.css';
 import axios from 'axios'
 import { Song, Track, Instrument, Effect } from 'reactronica';
 import * as Tone from 'tone'
+import SequencesList from './features/sequences/SequencesList'
+import AddSequenceForm from './features/sequences/AddSequenceForm'
 import Drumkit from './components/Drumkit';
 import Synth from './components/Synth'
 import MonoSynth from './components/MonoSynth'
@@ -21,15 +23,15 @@ function App() {
   //---------------------------------------------
   //  GET SEQUENCE ROUTE
   //---------------------------------------------
-  const getSequences = () => {
-    axios
-    .get('https://breeze-back.herokuapp.com/api/sequences')
-    .then(
-      (response) => setSequences(response.data),
-      (err) => console.error(err)
-    )
-   .catch((error) => console.error(error))
-  }
+  // const getSequences = () => {
+  //   axios
+  //   .get('https://breeze-back.herokuapp.com/api/sequences')
+  //   .then(
+  //     (response) => setSequences(response.data),
+  //     (err) => console.error(err)
+  //   )
+  //  .catch((error) => console.error(error))
+  // }
 
 
   const handleVolume = (e) => {
@@ -44,6 +46,8 @@ function App() {
   }
   return (
     <>
+    <SequencesList />
+    <AddSequenceForm/>
       <h1>Breeze</h1>
       <h4></h4>
     {/*  <Test2 /> */}
