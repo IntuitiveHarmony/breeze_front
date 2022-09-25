@@ -30,7 +30,6 @@ const MonoSynth = () => {
 
   return (
     <>
-
       <Track steps={steps} volume={monoVolume} onStepPlay={(step, index) => {
           setPlayHead(index)
           console.log(step, index);

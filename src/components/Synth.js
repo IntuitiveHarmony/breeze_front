@@ -14,12 +14,11 @@ const Synth = () => {
         }}>
         </Track>
       <div className='sequencerContainer'>
-        <SynthPad />
-        <SynthPad />
-
-      </div>
-    </>
-  )
+          <SynthPad />
+          <SynthPad />
+        </div>
+        </>
+    )
 }
 
 export default Synth;
