@@ -38,7 +38,7 @@ function App() {
       <>
       <h1>Breeze</h1>
       <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser} />
-      <h4></h4>
+      <h4>adfadf</h4>
     <Song isPlaying={isPlaying} volume={volume} bpm={tempo}>
       <Synth />
       <MonoSynth />
