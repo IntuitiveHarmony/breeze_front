@@ -3,6 +3,7 @@ import {  selectAllSequences,
           getSequencesStatus,
           getSequencesError,
           fetchSequences } from './sequencesSlice'
+import { setCurrentSequence, loadCurrentSequence } from '../currentSequence/currentSequenceSlice'
 import { useEffect } from 'react'
 import SequencesExcerpt from './SequencesExcerpt'
 
@@ -21,10 +22,14 @@ const SequencesList = () => {
     }
   }, [sequencesStatus, dispatch])
 
+//-----------------------------------------------
+//  SET THE CURRENT SEQUENCE
+//-----------------------------------------------
   const handleSelect = (e) => {
     for (let i = 0; i < sequences.length; i++) {
       if (sequences[i].id == e.target.value) {
-        console.log(sequences[i]) // eventually this will set the global sequence state
+        console.log(sequences[i])
+        dispatch(loadCurrentSequence(sequences[i])) // eventually this will set the global current sequence state
       }
     }
   }
@@ -41,7 +46,7 @@ const SequencesList = () => {
         {sequences.map((sequence, index) => {
           return (
             <>
-              <SequencesExcerpt sequence={sequence}/>
+              <SequencesExcerpt key={index} sequence={sequence}/>
             </>
           )
         })}

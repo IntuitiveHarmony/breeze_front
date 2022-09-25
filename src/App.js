@@ -6,6 +6,7 @@ import { Song, Track, Instrument, Effect } from 'reactronica';
 import * as Tone from 'tone'
 import SequencesList from './features/sequences/SequencesList'
 import AddSequenceForm from './features/sequences/AddSequenceForm'
+import EditSequenceForm from './features/currentSequence/EditSequence'
 import Drumkit from './components/Drumkit';
 import Synth from './components/Synth'
 import MonoSynth from './components/MonoSynth'
@@ -19,20 +20,6 @@ function App() {
   const [isPlaying, setIsPLaying] = useState(false)
   const [tempo, setTempo] = useState(100)
   const [volume, setVolume] = useState()
-
-  //---------------------------------------------
-  //  GET SEQUENCE ROUTE
-  //---------------------------------------------
-  // const getSequences = () => {
-  //   axios
-  //   .get('https://breeze-back.herokuapp.com/api/sequences')
-  //   .then(
-  //     (response) => setSequences(response.data),
-  //     (err) => console.error(err)
-  //   )
-  //  .catch((error) => console.error(error))
-  // }
-
 
   const handleVolume = (e) => {
     setVolume(e.target.value)
@@ -49,6 +36,7 @@ function App() {
       <h1>Breeze</h1>
       <AddSequenceForm/>
       <SequencesList />
+      <EditSequenceForm />
 
       {/*  <Test2 /> */}
       <Song isPlaying={isPlaying} volume={volume} bpm={tempo}>

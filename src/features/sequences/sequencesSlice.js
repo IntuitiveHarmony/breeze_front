@@ -27,6 +27,7 @@ export const addNewSequence = createAsyncThunk('sequences/addNewSequence', async
   }
 })
 
+
 const sequencesSlice = createSlice({
   name: 'sequences',
   initialState,
