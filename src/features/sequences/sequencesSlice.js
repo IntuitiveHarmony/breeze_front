@@ -73,6 +73,9 @@ export const selectAllSequences = (state) => state.sequences.sequences
 export const getSequencesStatus = (state) => state.sequences.status
 export const getSequencesError = (state) => state.sequences.error
 
+export const selectSequenceById = (state, sequenceId) =>
+  state.sequences.sequences.find(sequence => sequence.id === sequenceId)
+
 export const { sequenceAdded } = sequencesSlice.actions
 
 export default sequencesSlice.reducer

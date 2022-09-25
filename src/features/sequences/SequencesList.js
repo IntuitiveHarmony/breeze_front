@@ -21,6 +21,14 @@ const SequencesList = () => {
     }
   }, [sequencesStatus, dispatch])
 
+  const handleSelect = (e) => {
+    for (let i = 0; i < sequences.length; i++) {
+      if (sequences[i].id == e.target.value) {
+        console.log(sequences[i]) // eventually this will set the global sequence state
+      }
+    }
+  }
+
   let content
   if (sequencesStatus == 'loading') {
     content = <p>Connecting to Sequences...</p>
@@ -28,7 +36,7 @@ const SequencesList = () => {
     content =
     <>
       <label>Restore Previous  </label>
-      <select>
+      <select onChange={handleSelect}>
         <option disabled='true'>Select Sequence</option>
         {sequences.map((sequence, index) => {
           return (

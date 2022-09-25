@@ -2,7 +2,7 @@ import React from 'react'
 
 const SequencesExcerpt = ( props ) => {
     return (
-      <option>{props.sequence.name} -- Tempo: {props.sequence.tempo}</option>
+      <option value={props.sequence.id}>{props.sequence.name} -- Tempo: {props.sequence.tempo}</option>
     )
 }
 
