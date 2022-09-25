@@ -111,6 +111,7 @@ const Login = (props) => {
                                 </svg>
                     </button>
                 </div>
+                    <h4>Current User</h4>
                     <form onSubmit={handleLogin} className='add-form'>
                         <label htmlFor="email">Email: </label>
                         <input type='text' placeholder='email' className='add-input' onChange={(event)=> {setEmail(event.target.value)}}/>
@@ -128,7 +129,7 @@ const Login = (props) => {
                         <input type='submit' value='Login'  className='submitBtn btn btn-outline-primary'/>
                     </form>
                     {/* New User Registers here */}
-                    <h3>New User? Register Here:</h3>
+                    <h4>New User? Register Here:</h4>
                         <form onSubmit={handleCreateUser} className='add-form'>
                         <input type='text' placeholder='email' className='add-input' onChange={(event)=> {setEmail(event.target.value)}}/>
                         <input type='password' placeholder='password' className='add-input' onChange={(event)=> {setPassword(event.target.value)}}/>

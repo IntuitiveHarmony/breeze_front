@@ -9,6 +9,7 @@ import Synth from './components/Synth'
 import MonoSynth from './components/MonoSynth'
 import MonoSynth2 from './components/MonoSynth2'
 import Login from './components/Login'
+import Navbar from './components/Navbar';
 
 
 
@@ -18,6 +19,7 @@ function App() {
   const [isPlaying, setIsPLaying] = useState(false)
   const [tempo, setTempo] = useState(100)
   const [volume, setVolume] = useState()
+  const [currentUser, setCurrentUser] = useState({})
 
   //---------------------------------------------
   //  GET SEQUENCE ROUTE
@@ -46,7 +48,7 @@ function App() {
   return (
     <>
       <h1>Breeze</h1>
-      
+      <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser} />
       <h4></h4>
     <Song isPlaying={isPlaying} volume={volume} bpm={tempo}>
       <Synth />

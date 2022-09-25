@@ -82,7 +82,7 @@ body {
 
 .add-form-container {
   box-sizing: border-box;
-  background-color: rgba(255, 255, 255);
+  background-color: rgba(155, 155, 155);
   text-align: left;
   width: 525px;
   padding: 1.35em 1.6em 1.5em 1.6em;
@@ -170,4 +170,40 @@ body {
 	height: 3em;
   cursor: pointer;
 	transition: 0.3s;
+}
+
+/*****************/
+/*     Navbar    */
+/*****************/
+.navbar{
+  background-color: rgb(35, 35, 35);
+  top: 0;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+  z-index: 3;
+}
+h2{
+  margin: 0;
+}
+.logo{
+  width: 50%;
+}
+.icons{
+  width: 50%;
+  text-align: right;
+}
+.icons a{
+  margin: 0 .75em;
+}
+.icon-color path{
+  color: rgb(0, 0, 0);
+}
+
+.login {
+  display: inline-block;
+  text-align: center;
+  margin-right: 1.5em;
 }
