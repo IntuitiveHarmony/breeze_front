@@ -34,6 +34,9 @@
 -researching and experimenting with redux, applying lessons and tutorials to our project
 -videos from Dave Gray are very helpful (https://www.youtube.com/playlist?list=PL0Zuz27SZ-6M1J5I1w2-uZx36Qp6qhjKo)
 
+9/25/22  
+-researching and experimenting with redux, can finally add things to the store.  Redux is starting to make more sense
+
 
 
 

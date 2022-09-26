@@ -81,6 +81,7 @@ function App() {
           <PolyBeastCs />
           <PolyBeastCs />
           <PolyBeastCs />
+          <SampleKick />
         </Song><br/>
         <hr/>
 
