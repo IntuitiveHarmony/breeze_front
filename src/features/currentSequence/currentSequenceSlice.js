@@ -11,9 +11,12 @@ const SEQUENCES_URL = 'https://breeze-back.herokuapp.com/api/sequences'
 
 
 const initialState = {
-  // id: '',
-  // name: '',
-  // tempo: ''
+  id: '',
+  name: '',
+  tempo: '',
+  polyBeastCs: {
+    steps: []
+  }
 }
 
 
@@ -24,7 +27,7 @@ export const updateSequence = createAsyncThunk('currentSequence/editSequence', a
     return response.data
   } catch (err) {
     return err.message
-  } 
+  }
 })
 
 // export const setCurrentSequence = (currentSequence) => {
@@ -49,6 +52,11 @@ const currentSequenceSlice = createSlice({
       reducer(state, action) {
         state.currentSequence.name = action.payload
       }
+    },
+    updateStep: {
+      reducer(state, action) {
+        state.polyBeastCs.steps = action.payload
+      }
     }
   }
 })
@@ -59,6 +67,6 @@ const currentSequenceSlice = createSlice({
 export const selectCurrentSequence = (state) => state.currentSequence.currentSequence
 // this will put the current state in the store
 
-export const { loadCurrentSequence, changeTempo, changeName } = currentSequenceSlice.actions
+export const { loadCurrentSequence, changeTempo, changeName, updateStep } = currentSequenceSlice.actions
 
 export default currentSequenceSlice.reducer

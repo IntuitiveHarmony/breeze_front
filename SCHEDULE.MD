@@ -36,6 +36,7 @@
 
 9/25/22  
 -researching and experimenting with redux, can finally add things to the store.  Redux is starting to make more sense
+-Established full CRUD!
 
 
 

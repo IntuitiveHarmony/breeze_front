@@ -1,11 +1,16 @@
 import {useState} from 'react';
+import { useDispatch } from 'react-redux'
 import { Song, Track, Instrument, Effect } from 'reactronica';
+import { updateStep } from '../features/currentSequence/currentSequenceSlice'
 
 const PolyBeastStep = (props) => {
+  const dispatch = useDispatch()
   const [active, setActive] = useState(false)
 
   const handleActivateStep = () => {
     setActive(!active)
+    dispatch(updateStep(props.index))
+    console.log('update' + props.index)
   }
 
 
