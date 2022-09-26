@@ -14,6 +14,7 @@ import Drumkit from './components/Drumkit';
 import Synth from './components/Synth'
 import MonoSynth from './components/MonoSynth'
 import MonoSynth2 from './components/MonoSynth2'
+import PolyBeastCs from './components/PolyBeastCs'
 import SampleKick from './components/SampleKick'
 import Login from './components/Login'
 import Navbar from './components/Navbar';
@@ -71,6 +72,14 @@ function App() {
           <Synth />
           <MonoSynth />
           <MonoSynth2 />
+          <hr/>
+          <PolyBeastCs />
+          <PolyBeastCs />
+          <PolyBeastCs />
+          <PolyBeastCs />
+          <PolyBeastCs />
+          <PolyBeastCs />
+          <PolyBeastCs />
         </Song><br/>
         <hr/>
 
