@@ -57,6 +57,7 @@ const currentSequenceSlice = createSlice({
 
 
 export const selectCurrentSequence = (state) => state.currentSequence.currentSequence
+// this will put the current state in the store
 
 export const { loadCurrentSequence, changeTempo, changeName } = currentSequenceSlice.actions
 

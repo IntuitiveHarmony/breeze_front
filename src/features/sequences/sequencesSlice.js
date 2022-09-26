@@ -1,4 +1,5 @@
 import { createSlice, nanoid, createAsyncThunk } from '@reduxjs/toolkit'
+import { updateSequence } from '../currentSequence/currentSequenceSlice'
 import axios from 'axios'
 
 const SEQUENCES_URL = 'https://breeze-back.herokuapp.com/api/sequences'
@@ -37,13 +38,13 @@ export const addNewSequence = createAsyncThunk('sequences/addNewSequence', async
 //-----------------------------------------------
 //     DELETE SEQUENCE FROM OUR DATA BASE
 //-----------------------------------------------
-export const deleteSequence = createAsyncThunk('sequences/deleteSequence', async (initialSequence) => {
+export const deleteSequence = createAsyncThunk('currentSequence/deletedSequence', async (deletedSequence) => {
   try {
-    const response = await axios.delete(`${SEQUENCES_URL}/`, initialSequence)
+    const response = await axios.delete(`${SEQUENCES_URL}/${deletedSequence.id}`)
     return response.data
   } catch (err) {
-    return err.messasge
-  }
+    return err.message
+  } 
 })
 
 const sequencesSlice = createSlice({
@@ -82,6 +83,9 @@ const sequencesSlice = createSlice({
       .addCase(addNewSequence.fulfilled, (state, action)=> {
         state.sequences.push(action.payload)
       })
+      .addCase(updateSequence.fulfilled, (state, action) => {
+        state.sequences = [...action.payload]
+      } )
 
   }
 })

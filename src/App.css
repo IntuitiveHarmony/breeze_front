@@ -223,3 +223,11 @@ h2{
   text-align: center;
   margin-right: 1.5em;
 }
+
+/* /////////////////
+  CRUD CONTAINER
+//////////////////*/
+.crud-container {
+  border: white solid 3px;
+  margin-bottom: 3em;
+}
