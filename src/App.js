@@ -61,33 +61,6 @@ function App() {
 
   return (
       <>
-<<<<<<< HEAD
-      <h1>Breeze</h1>
-      <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser} />
-      <h4></h4>
-      <AddSequenceForm/>
-      <SequencesList />
-      <EditSequenceForm />
-      <hr />
-    <Song isPlaying={isPlaying} volume={volume} bpm={tempo}>
-      <Synth />
-      <MonoSynth />
-      <MonoSynth2 />
-      <Kick />
-    </Song><br/>
-    <hr/>
-      
-
-      {isPlaying ? <button onClick={() => play()}>Stop</button> : <button onClick={() => play()}>Play</button> }
-      <label>Main volume</label>
-      <input onChange={handleVolume} type='range' step='1' min='-100' max='0' ></input>
-      <label>Tempo: {tempo}bpm</label>
-      <input onChange={handleTempo} type='range' step='1' min='10' max='700' ></input>
-      <hr />
-      <Drumkit />
-      
-    </>
-=======
         <h1>Breeze</h1>
         <h3>{sequenceName}</h3>
         <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser} />
@@ -120,7 +93,6 @@ function App() {
         <hr />
         <Drumkit />
       </>
->>>>>>> 767c97fefcd6e44d1877b9d69eb0c7fa697905b8
   );
 }
 
