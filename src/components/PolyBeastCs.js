@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import { Song, Track, Instrument, Effect } from 'reactronica';
 import PolyBeastStep from './PolyBeastStep'
+import UnderGrid from './UnderGrid'
 
 
 const PolyBeastCs = () => {
@@ -38,7 +39,10 @@ const PolyBeastCs = () => {
       <div className='synthGrid'>
       {steps.map((step, index) => {
         return (
+          <>
+          <UnderGrid />
           <PolyBeastStep index={index} step={step} playHead={playHead}/>
+          </>
         )
       })}
       </div>
