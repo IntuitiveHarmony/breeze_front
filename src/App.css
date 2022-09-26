@@ -12,7 +12,7 @@ body {
   height: 3em;
   border-radius: 10px;
   border: solid rgb(100, 0, 255) 2px;
-  background-color: rgb(100, 100, 200)
+  background-color: rgba(100, 100, 200, .6)
 }
 .playHead {
   border: solid magenta 2px;
@@ -32,6 +32,15 @@ body {
   height: 5em;
   border-radius: 2em;
   margin: .1em;
+}
+.underStep {
+  position: absolute;
+  width: 3em;
+  height: 3em;
+  border-radius: 10px;
+  border: solid rgb(100, 0, 255) 2px;
+  background-color: rgb(255, 255, 255);
+  z-index: -1;
 }
 .dark {
   background-color: rgb(80, 0, 200);
