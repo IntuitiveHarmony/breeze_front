@@ -19,6 +19,7 @@ import SampleKick from './components/SampleKick'
 import Login from './components/Login'
 import Navbar from './components/Navbar';
 import Kick from './components/Kick';
+import DeleteSequenceForm from './features/sequences/DeleteSequenceForm';
 
 
 
@@ -65,10 +66,12 @@ function App() {
         <h3>{sequenceName}</h3>
         <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser} />
         <h4></h4>
-
-        <AddSequenceForm/>
-        <SequencesList />
-        <EditSequenceForm />
+        <div className='crud-container'>
+          <AddSequenceForm/>
+          <SequencesList />
+          <EditSequenceForm />
+          <DeleteSequenceForm />
+        </div>
         <Song isPlaying={isPlaying} volume={volume} bpm={bpm}>
           <Synth />
           <MonoSynth />
