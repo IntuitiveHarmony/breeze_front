@@ -62,7 +62,7 @@ function App() {
 
   return (
       <>
-        <h1>Breeze</h1>
+        <h1>polybeast</h1>
         <h3>{sequenceName}</h3>
         <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser} />
         <h4></h4>

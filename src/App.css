@@ -228,5 +228,6 @@ h2{
   CRUD CONTAINER
 //////////////////*/
 .crud-container {
-  
+  border: white solid 3px;
+  margin-bottom: 3em;
 }
