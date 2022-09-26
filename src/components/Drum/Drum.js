@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import Tone from 'tone'
+// import Tone from 'tone'
 
 const Drum = (props) => {
     const [playing, setPlaying] = useState(false);
