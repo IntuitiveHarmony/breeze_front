@@ -4,7 +4,7 @@ import MonoSynthStep from './MonoSynthStep'
 
 const SampleKick = (props) => {
   const [steps, setSteps] = useState([
-      {name: 'C3'}, {name: 'C3'}, {name: 'C3'}, {name: 'C3'}, {name: 'C3'}, {name: 'C3'}, {name: 'C3'}, {name: 'C3'}
+      'C3', 'C3', 'C3', 'C3', 'C3', 'C3', 'C3', 'C3'
   ])
 
   const [playHead, setPlayHead] = useState(0)
@@ -15,7 +15,7 @@ const SampleKick = (props) => {
       <Track steps={steps}  onStepPlay={(step, index) => {
           setPlayHead(index)
           }}>
-          <Instrument type='sampler' samples={{'C3': 'src/components/sounds/kick10.mp3' }}/>
+          <Instrument type='sampler'/>
       </Track>
       <div className='synthGrid'>
       {steps.map((step, index) => {

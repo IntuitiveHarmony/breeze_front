@@ -17,14 +17,14 @@ const initialState = {
 
 
 //This will be the edit sequence eventually.  i think
-// export const updateSequence = createAsyncThunk('currentSequence/editSequence', async (editedSequence) => {
-//   try {
-//     const response = await axios.post(SEQUENCES_URL, editedSequence)
-//     return response.data
-//   } catch (err) {
-//     return err.message
-//   }
-// })
+export const updateSequence = createAsyncThunk('currentSequence/editSequence', async (editedSequence) => {
+  try {
+    const response = await axios.put(`${SEQUENCES_URL}/${editedSequence.id}`, editedSequence)
+    return response.data
+  } catch (err) {
+    return err.message
+  } console.log()
+})
 
 // export const setCurrentSequence = (currentSequence) => {
 //   dispatch(loadCurrentSequence(currentSequence))
