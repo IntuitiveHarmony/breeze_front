@@ -83,9 +83,6 @@ const Test2 = () => {
             Kick
         </button>
         {/* ...other pads */}
-<<<<<<< HEAD
-
-=======
         <br />
     <div onClick={() => {playNote('C5')}} className='step dark'>
     <br/>
@@ -99,7 +96,6 @@ const Test2 = () => {
     <button onClick={() => {playPluck('C5')}}>Pluck</button>
 
   
->>>>>>> bb45c3746f75224335fa734f4cbb517df42bbbfa
         {/* Reactronica Components */}
         <Song>
           <Track>
