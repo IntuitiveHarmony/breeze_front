@@ -43,29 +43,20 @@ const currentSequenceSlice = createSlice({
       reducer(state, action) {
         state.currentSequence.tempo = action.payload
       }
+    },
+    changeName: {
+      reducer(state, action) {
+        state.currentSequence.name = action.payload
+      }
     }
   }
 })
 
-//--------------------------------
-//  CHANGE TEMPO
-//--------------------------------
-const changeTempoSlice = createSlice({
-  name: 'tempo',
-  initialState: {},
-  reducers: {
-    changeTempo: {
-      reducer(state, action) {
-        console.log(action.payload)
-        // state.currentSequence = action.payload
-      }
-    }
-  },
-})
+
 
 
 export const selectCurrentSequence = (state) => state.currentSequence.currentSequence
 
-export const { loadCurrentSequence, changeTempo } = currentSequenceSlice.actions
+export const { loadCurrentSequence, changeTempo, changeName } = currentSequenceSlice.actions
 
 export default currentSequenceSlice.reducer
