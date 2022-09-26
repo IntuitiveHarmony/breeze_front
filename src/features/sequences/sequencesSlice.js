@@ -9,6 +9,10 @@ const initialState = {
   error: null
 }
 
+
+//-----------------------------------------------
+//     GET SEQUENCES FROM OUR DATA BASE
+//-----------------------------------------------
 export const fetchSequences = createAsyncThunk('sequences/fetchSequences', async () => {
   try {
     const response = await axios.get(SEQUENCES_URL)
@@ -18,6 +22,9 @@ export const fetchSequences = createAsyncThunk('sequences/fetchSequences', async
   }
 })
 
+//-----------------------------------------------
+//     ADD NEW SEQUENCE TO OUR DATA BASE
+//-----------------------------------------------
 export const addNewSequence = createAsyncThunk('sequences/addNewSequence', async (initialSequence) => {
   try {
     const response = await axios.post(SEQUENCES_URL, initialSequence)
@@ -27,6 +34,17 @@ export const addNewSequence = createAsyncThunk('sequences/addNewSequence', async
   }
 })
 
+//-----------------------------------------------
+//     DELETE SEQUENCE FROM OUR DATA BASE
+//-----------------------------------------------
+export const deleteSequence = createAsyncThunk('sequences/deleteSequence', async (initialSequence) => {
+  try {
+    const response = await axios.delete(`${SEQUENCES_URL}/`, initialSequence)
+    return response.data
+  } catch (err) {
+    return err.messasge
+  }
+})
 
 const sequencesSlice = createSlice({
   name: 'sequences',

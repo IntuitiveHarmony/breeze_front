@@ -1,4 +1,7 @@
-import { createSlice, nanoid, createAsyncThunk } from '@reduxjs/toolkit'
+import {  createSlice,
+          nanoid,
+          createAsyncThunk,
+          combineReducers } from '@reduxjs/toolkit'
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios'
 
@@ -7,9 +10,9 @@ const SEQUENCES_URL = 'https://breeze-back.herokuapp.com/api/sequences'
 
 
 const initialState = {
-  id: '',
-  name: '',
-  tempo: ''
+  // id: '',
+  // name: '',
+  // tempo: ''
 }
 
 
@@ -33,15 +36,27 @@ const currentSequenceSlice = createSlice({
   reducers: {
     loadCurrentSequence: {
       reducer(state, action) {
-        console.log('sweet')
-        state.currentSequence.push(action.payload)
+        state.currentSequence = action.payload
+      }
+    },
+    changeTempo: {
+      reducer(state, action) {
+        state.currentSequence.tempo = action.payload
+      }
+    },
+    changeName: {
+      reducer(state, action) {
+        state.currentSequence.name = action.payload
       }
     }
   }
 })
 
+
+
+
 export const selectCurrentSequence = (state) => state.currentSequence.currentSequence
 
-export const { loadCurrentSequence } = currentSequenceSlice.actions
+export const { loadCurrentSequence, changeTempo, changeName } = currentSequenceSlice.actions
 
 export default currentSequenceSlice.reducer
