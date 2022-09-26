@@ -35,8 +35,8 @@ function App() {
     setVolume(e.target.value)
   }
   const handleTempo = (e) => {
-    changeTempo(e.target.value)
-    console.log(e.target.value)
+    dispatch(changeTempo(e.target.value))
+    // changeTempo(e.target.value)
   }
   const play = () => {
     setIsPLaying(!isPlaying)
@@ -79,7 +79,7 @@ function App() {
         <label>Main volume</label>
         <input onChange={handleVolume} type='range' step='1' min='-100' max='0' ></input>
         <label>Tempo: {bpm} bpm</label>
-        <input onChange={() => dispatch(changeTempo())} type='range' step='1' min='10' max='700' ></input>
+        <input onChange={handleTempo} type='range' step='1' min='10' max='700' ></input>
         <hr />
         <Drumkit />
       </>

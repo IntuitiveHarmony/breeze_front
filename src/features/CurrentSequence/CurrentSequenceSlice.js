@@ -41,7 +41,7 @@ const currentSequenceSlice = createSlice({
     },
     changeTempo: {
       reducer(state, action) {
-        console.log(action.payload)
+        state.currentSequence.tempo = action.payload
       }
     }
   }
