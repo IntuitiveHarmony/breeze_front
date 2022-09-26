@@ -13,6 +13,7 @@ import MonoSynth from './components/MonoSynth'
 import MonoSynth2 from './components/MonoSynth2'
 import Login from './components/Login'
 import Navbar from './components/Navbar';
+import Kick from './components/Kick';
 
 
 
@@ -38,16 +39,19 @@ function App() {
       <>
       <h1>Breeze</h1>
       <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser} />
-      <h4>adfadf</h4>
+      <h4></h4>
+      <AddSequenceForm/>
+      <SequencesList />
+      <EditSequenceForm />
+      <hr />
     <Song isPlaying={isPlaying} volume={volume} bpm={tempo}>
       <Synth />
       <MonoSynth />
       <MonoSynth2 />
+      <Kick />
     </Song><br/>
     <hr/>
-      <AddSequenceForm/>
-      <SequencesList />
-      <EditSequenceForm />
+      
 
       {isPlaying ? <button onClick={() => play()}>Stop</button> : <button onClick={() => play()}>Play</button> }
       <label>Main volume</label>
@@ -56,6 +60,7 @@ function App() {
       <input onChange={handleTempo} type='range' step='1' min='10' max='700' ></input>
       <hr />
       <Drumkit />
+      
     </>
   );
 }
