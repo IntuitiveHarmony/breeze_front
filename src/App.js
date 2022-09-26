@@ -18,6 +18,7 @@ import PolyBeastCs from './components/PolyBeastCs'
 import SampleKick from './components/SampleKick'
 import Login from './components/Login'
 import Navbar from './components/Navbar';
+import Kick from './components/Kick';
 
 
 
