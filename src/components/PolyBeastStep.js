@@ -14,18 +14,30 @@ const PolyBeastStep = (props) => {
     <>
     {active ?
         props.playHead === props.index ?
-        <div className='synthStep playHead active' onClick={() => handleActivateStep()}>
-        </div>
+        <>
+          <div className='underStep'></div>
+          <div className='synthStep playHead active' onClick={() => handleActivateStep()}>
+          </div>
+        </>
         :
-        <div className='synthStep active' onClick={() => handleActivateStep()}>
-        </div>
+        <>
+          <div className='underStep'></div>
+          <div className='synthStep active' onClick={() => handleActivateStep()}>
+          </div>
+        </>
       :
         props.playHead === props.index ?
+        <>
+          <div className='underStep'></div>
           <div className='synthStep playHead ' onClick={() => handleActivateStep()}>
           </div>
+        </>
           :
+        <>
+          <div className='underStep'></div>
           <div className='synthStep' onClick={() => handleActivateStep()}>
-          </div> }
+          </div>
+        </>}
     </>
   )
 }

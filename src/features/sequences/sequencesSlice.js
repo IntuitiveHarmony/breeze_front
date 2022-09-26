@@ -80,7 +80,6 @@ const sequencesSlice = createSlice({
         state.error = action.error.message
       })
       .addCase(addNewSequence.fulfilled, (state, action)=> {
-        console.log(action.payload)
         state.sequences.push(action.payload)
       })
 
