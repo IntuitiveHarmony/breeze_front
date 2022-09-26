@@ -2,6 +2,7 @@ import {  createSlice,
           nanoid,
           createAsyncThunk,
           combineReducers } from '@reduxjs/toolkit'
+import { fetchSequences } from '../sequences/sequencesSlice'
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios'
 
@@ -23,7 +24,7 @@ export const updateSequence = createAsyncThunk('currentSequence/editSequence', a
     return response.data
   } catch (err) {
     return err.message
-  } console.log()
+  } 
 })
 
 // export const setCurrentSequence = (currentSequence) => {
