@@ -7,9 +7,9 @@ const SEQUENCES_URL = 'https://breeze-back.herokuapp.com/api/sequences'
 
 
 const initialState = {
-  id: '',
-  name: '',
-  tempo: ''
+  // id: '',
+  // name: '',
+  // tempo: ''
 }
 
 
@@ -31,13 +31,23 @@ const currentSequenceSlice = createSlice({
   name: 'currentSequence',
   initialState,
   reducers: {
+    // loadCurrentSequence: (state, action) => {
+    //   const loadedSequence = {
+    //     id: action.payload.id,
+    //     name: action.payload.name,
+    //     tempo: action.payload.tempo
+    //   }
+    //   console.log(loadedSequence)
+    //   state.push(loadedSequence)
+    //
+    // }
     loadCurrentSequence: {
       reducer(state, action) {
-        console.log('sweet')
-        state.currentSequence.push(action.payload)
+        console.log(action.payload)
+        state.currentSequence = action.payload
       }
     }
-  }
+  },
 })
 
 export const selectCurrentSequence = (state) => state.currentSequence.currentSequence

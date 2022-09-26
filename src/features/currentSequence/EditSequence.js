@@ -9,6 +9,7 @@ import { selectAllSequences } from '../sequences/sequencesSlice'
 const EditSequenceForm = () => {
 
 
+
     return (
       <details>
         <summary>Update Current</summary>

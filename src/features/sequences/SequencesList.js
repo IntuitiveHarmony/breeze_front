@@ -2,7 +2,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import {  selectAllSequences,
           getSequencesStatus,
           getSequencesError,
-          fetchSequences } from './sequencesSlice'
+          fetchSequences,
+          selectSequenceById, } from './sequencesSlice'
 import { setCurrentSequence, loadCurrentSequence } from '../currentSequence/currentSequenceSlice'
 import { useEffect } from 'react'
 import SequencesExcerpt from './SequencesExcerpt'
@@ -25,10 +26,13 @@ const SequencesList = () => {
 //-----------------------------------------------
 //  SET THE CURRENT SEQUENCE
 //-----------------------------------------------
+
+// const currentSequence = useSelector((state) => selectSequenceById(state, sequenceId))
   const handleSelect = (e) => {
     for (let i = 0; i < sequences.length; i++) {
       if (sequences[i].id == e.target.value) {
         console.log(sequences[i])
+
         dispatch(loadCurrentSequence(sequences[i])) // eventually this will set the global current sequence state
       }
     }
@@ -42,7 +46,7 @@ const SequencesList = () => {
     <>
       <label>Restore Previous  </label>
       <select onChange={handleSelect}>
-        <option disabled='true'>Select Sequence</option>
+        <option disabled={true}>Select Sequence</option>
         {sequences.map((sequence, index) => {
           return (
             <>
