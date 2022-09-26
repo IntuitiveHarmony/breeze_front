@@ -2,9 +2,8 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { nanoid } from '@reduxjs/toolkit'
 
-import { selectSequenceById, updateSequence } from '../sequences/sequencesSlice'
-import { selectAllSequences } from '../sequences/sequencesSlice'
-import { selectCurrentSequence, changeName } from '../currentSequence/currentSequenceSlice'
+import { selectSequenceById, selectAllSequences } from '../sequences/sequencesSlice'
+import { selectCurrentSequence, changeName, updateSequence } from '../currentSequence/currentSequenceSlice'
 
 
 const EditSequenceForm = () => {
@@ -29,15 +28,22 @@ const EditSequenceForm = () => {
   }
 
 
+  const handleUpdateSequence = () => {
+      try {
+        dispatch(updateSequence(currentSequence))
+      } catch (err) {
+        console.error('Failed to update the Sequence', err)
+      }
+
+  }
+
     return (
       <details>
         <summary>Update Current</summary>
-          <form onSubmit=''>
             <label htmlFor="name">Update Name: </label>
             <input type='text' name='name' defaultValue={sequenceName} onChange={handleUpdateName} />
             <br/>
-            <input type="submit"/>
-          </form>
+            <button onClick={() => handleUpdateSequence()} >Update Sequence</button>
       </details>
     )
 }

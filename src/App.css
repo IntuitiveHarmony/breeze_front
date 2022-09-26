@@ -3,6 +3,12 @@ body {
   background-color: rgb(35, 35, 35);
   color: white;
 }
+form {
+  margin: 1em;
+}
+details {
+  margin: 1em;
+}
 .synthGrid {
   display: flex;
 }

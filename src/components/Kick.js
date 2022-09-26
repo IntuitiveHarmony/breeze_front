@@ -19,7 +19,7 @@ const Kick = () => {
             instrument: "F - kick"
     })
 
-    
+
 
 
 
