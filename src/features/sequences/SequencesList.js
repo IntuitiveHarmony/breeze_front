@@ -24,16 +24,12 @@ const SequencesList = () => {
   }, [sequencesStatus, dispatch])
 
 //-----------------------------------------------
-//  SET THE CURRENT SEQUENCE
+//  SET THE CURRENT SEQUENCE IN STORE
 //-----------------------------------------------
-
-// const currentSequence = useSelector((state) => selectSequenceById(state, sequenceId))
   const handleSelect = (e) => {
     for (let i = 0; i < sequences.length; i++) {
       if (sequences[i].id == e.target.value) {
-        console.log(sequences[i])
-
-        dispatch(loadCurrentSequence(sequences[i])) // eventually this will set the global current sequence state
+        dispatch(loadCurrentSequence(sequences[i]))
       }
     }
   }

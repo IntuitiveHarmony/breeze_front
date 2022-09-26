@@ -1,4 +1,7 @@
-import { createSlice, nanoid, createAsyncThunk } from '@reduxjs/toolkit'
+import {  createSlice,
+          nanoid,
+          createAsyncThunk,
+          combineReducers } from '@reduxjs/toolkit'
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios'
 
@@ -31,27 +34,38 @@ const currentSequenceSlice = createSlice({
   name: 'currentSequence',
   initialState,
   reducers: {
-    // loadCurrentSequence: (state, action) => {
-    //   const loadedSequence = {
-    //     id: action.payload.id,
-    //     name: action.payload.name,
-    //     tempo: action.payload.tempo
-    //   }
-    //   console.log(loadedSequence)
-    //   state.push(loadedSequence)
-    //
-    // }
     loadCurrentSequence: {
       reducer(state, action) {
-        console.log(action.payload)
         state.currentSequence = action.payload
+      }
+    },
+    changeTempo: {
+      reducer(state, action) {
+        console.log(action.payload)
+      }
+    }
+  }
+})
+
+//--------------------------------
+//  CHANGE TEMPO
+//--------------------------------
+const changeTempoSlice = createSlice({
+  name: 'tempo',
+  initialState: {},
+  reducers: {
+    changeTempo: {
+      reducer(state, action) {
+        console.log(action.payload)
+        // state.currentSequence = action.payload
       }
     }
   },
 })
 
+
 export const selectCurrentSequence = (state) => state.currentSequence.currentSequence
 
-export const { loadCurrentSequence } = currentSequenceSlice.actions
+export const { loadCurrentSequence, changeTempo } = currentSequenceSlice.actions
 
 export default currentSequenceSlice.reducer
