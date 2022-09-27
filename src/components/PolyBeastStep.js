@@ -7,13 +7,16 @@ const PolyBeastStep = (props) => {
   const dispatch = useDispatch()
   const [active, setActive] = useState(false)
   const [noteIndex, setNoteIndex] = useState([props.index, props.note])
+  const [noteNull, setNoteNull] = useState([props.index, null])
 
   const handleActivateStep = () => {
     setActive(!active)
     dispatch(updateStep(noteIndex))
-    console.log('update' + props.index)
   }
-
+  const handleDeactivateStep = () => {
+    setActive(!active)
+    dispatch(updateStep(noteNull))
+  }
 
 
   return (
@@ -28,7 +31,7 @@ const PolyBeastStep = (props) => {
         :
         <>
           <div className='underStep'></div>
-          <div className='synthStep active' onClick={() => handleActivateStep()}>
+          <div className='synthStep active' onClick={() => handleDeactivateStep()}>
           </div>
         </>
       :
