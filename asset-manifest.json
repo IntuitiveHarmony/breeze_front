@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/breeze_front/static/css/main.4f6154af.css",
-    "main.js": "/breeze_front/static/js/main.c2ec33dd.js",
+    "main.css": "/breeze_front/static/css/main.8c9c51b7.css",
+    "main.js": "/breeze_front/static/js/main.d65b2399.js",
     "static/js/787.a230297f.chunk.js": "/breeze_front/static/js/787.a230297f.chunk.js",
     "static/media/kick10.mp3": "/breeze_front/static/media/kick10.b7d456f0bb453e931bcb.mp3",
     "static/media/closedhat1.mp3": "/breeze_front/static/media/closedhat1.f7a6ab1cdbe5307e99f2.mp3",
     "static/media/snare1.mp3": "/breeze_front/static/media/snare1.36736b8c379936cf6b33.mp3",
     "index.html": "/breeze_front/index.html",
-    "main.4f6154af.css.map": "/breeze_front/static/css/main.4f6154af.css.map",
-    "main.c2ec33dd.js.map": "/breeze_front/static/js/main.c2ec33dd.js.map",
+    "main.8c9c51b7.css.map": "/breeze_front/static/css/main.8c9c51b7.css.map",
+    "main.d65b2399.js.map": "/breeze_front/static/js/main.d65b2399.js.map",
     "787.a230297f.chunk.js.map": "/breeze_front/static/js/787.a230297f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4f6154af.css",
-    "static/js/main.c2ec33dd.js"
+    "static/css/main.8c9c51b7.css",
+    "static/js/main.d65b2399.js"
   ]
 }
