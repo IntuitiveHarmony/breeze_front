@@ -6,10 +6,11 @@ import { updateStep } from '../features/currentSequence/currentSequenceSlice'
 const PolyBeastStep = (props) => {
   const dispatch = useDispatch()
   const [active, setActive] = useState(false)
+  const [noteIndex, setNoteIndex] = useState([props.index, props.note])
 
   const handleActivateStep = () => {
     setActive(!active)
-    dispatch(updateStep(props.index))
+    dispatch(updateStep(noteIndex))
     console.log('update' + props.index)
   }
 

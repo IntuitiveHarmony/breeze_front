@@ -48,7 +48,8 @@ const currentSequenceSlice = createSlice({
     },
     updateStep: {
       reducer(state, action) {
-        state.currentSequence.polyBeastCs.steps.push(action.payload)
+        state.currentSequence.polyCsSteps[action.payload[0]] = action.payload[1]
+        console.log(action.payload)
       }
     },
     removeStep: {

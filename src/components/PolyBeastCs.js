@@ -9,6 +9,8 @@ const PolyBeastCs = () => {
   const dispatch = useDispatch()
   const currentSequence = useSelector(selectCurrentSequence)
 
+
+  const [note, setNote] = useState('C#3')
   const [disableRemove, setDisableRemove] = useState(false)
   const [disableAdd, setDisableAdd] = useState(false)
   const [playHead, setPlayHead] = useState(0)
@@ -30,7 +32,6 @@ const PolyBeastCs = () => {
   //-------------------------------------------
   const handleAddStep = () => {
     dispatch(addStep())
-    console.log(currentSequence.polyCsSteps.length)
     if (currentSequence.polyCsSteps.length === 15) {
       setDisableAdd(true)
     }
@@ -40,7 +41,6 @@ const PolyBeastCs = () => {
   }
   const handleRemoveStep = () => {
     dispatch(removeStep())
-    console.log(currentSequence.polyCsSteps.length)
     if (currentSequence.polyCsSteps.length < 17) {
       setDisableAdd(false)
     }
@@ -65,11 +65,11 @@ const PolyBeastCs = () => {
       </Track>
       <div className='synthGrid'>
       {disableRemove ?
-        <button onClick={handleRemoveStep} disabled>Min</button>
+        <button onClick={handleRemoveStep} disabled>Min!!!</button>
         :
         <button onClick={handleRemoveStep}>- Step</button> }
       {disableAdd ?
-        <button onClick={handleAddStep} disabled>Max</button>
+        <button onClick={handleAddStep} disabled>Max!!!</button>
         :
         <button onClick={handleAddStep}>+ Step</button> }
 
@@ -77,7 +77,7 @@ const PolyBeastCs = () => {
         return (
           <>
           <UnderGrid />
-          <PolyBeastStep index={index} step={step} playHead={playHead}/>
+          <PolyBeastStep currentSequence={currentSequence} index={index} step={step} playHead={playHead} note={note}/>
           </>
         )
       })}
