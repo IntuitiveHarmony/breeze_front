@@ -8,8 +8,9 @@ import { selectCurrentSequence, removeStep, addStep } from '../features/currentS
 const PolyBeastCs = () => {
   const dispatch = useDispatch()
   const currentSequence = useSelector(selectCurrentSequence)
-  console.log(currentSequence)
 
+  const [disableRemove, setDisableRemove] = useState(false)
+  const [disableAdd, setDisableAdd] = useState(false)
   const [playHead, setPlayHead] = useState(0)
   const [delayWet, setDelayWet] = useState(0)
   const [monoVolume, setMonoVolume] = useState(-10)
@@ -24,13 +25,31 @@ const PolyBeastCs = () => {
     setMonoVolume(e.target.value)
   }
 
-
+  //--------------------------------------------
+  //    ADD REMOVE STEPS AND DISABLE BUTTONS
+  //-------------------------------------------
   const handleAddStep = () => {
     dispatch(addStep())
+    console.log(currentSequence.polyCsSteps.length)
+    if (currentSequence.polyCsSteps.length === 15) {
+      setDisableAdd(true)
+    }
+   if (currentSequence.polyCsSteps.length < 16) {
+      setDisableRemove(false)
+    }
   }
   const handleRemoveStep = () => {
     dispatch(removeStep())
+    console.log(currentSequence.polyCsSteps.length)
+    if (currentSequence.polyCsSteps.length < 17) {
+      setDisableAdd(false)
+    }
+    if (currentSequence.polyCsSteps.length === 2) {
+      setDisableRemove(true)
+    }
   }
+
+
 
   return (
     <>
@@ -45,6 +64,15 @@ const PolyBeastCs = () => {
 
       </Track>
       <div className='synthGrid'>
+      {disableRemove ?
+        <button onClick={handleRemoveStep} disabled>Min</button>
+        :
+        <button onClick={handleRemoveStep}>- Step</button> }
+      {disableAdd ?
+        <button onClick={handleAddStep} disabled>Max</button>
+        :
+        <button onClick={handleAddStep}>+ Step</button> }
+
       {currentSequence.polyCsSteps.map((step, index) => {
         return (
           <>
@@ -53,8 +81,7 @@ const PolyBeastCs = () => {
           </>
         )
       })}
-      <button onClick={handleRemoveStep}>- Step</button>
-      <button onClick={handleAddStep}>+ Step</button>
+
       </div>
 
     </> : <p>Waiting...</p> }

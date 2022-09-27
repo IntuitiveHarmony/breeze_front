@@ -16,7 +16,7 @@ const AddSequenceForm = () => {
 
   const canSave = Boolean(name) && addRequestStatus === 'idle'
 
-  const onSaveSequenceClicked = () => {
+  const handleAddNewSequence = () => {
     if (canSave) {
       try {
         setAddRequestStatus('Pending')
@@ -57,7 +57,7 @@ const AddSequenceForm = () => {
                 /><br/>
                 <button
                   type='button'
-                  onClick={onSaveSequenceClicked}
+                  onClick={handleAddNewSequence}
                 >Create New Sequence</button>
               </form>
           </details>
