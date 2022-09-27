@@ -25,9 +25,10 @@ const SequencesList = () => {
     dispatch(loadCurrentSequence({
       id: '',
       name: '',
-      tempo: '',
+      tempo: 100,
       polyBeastCs: {
-        steps: []
+        steps: [
+          'C2', null, null, null, 'C2', null, null, null, 'C2', null, null, null, 'C2', null, null, null,]
       }}))
     if (sequencesStatus === 'idle') {
       dispatch(fetchSequences())
