@@ -7,7 +7,7 @@ import UnderGrid from './UnderGrid'
 const PolyBeastCs = () => {
 
   const [steps, setSteps] = useState([
-    null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+    'C3', null, null, null, 'C3', null, null, null, 'C3', null, null, null, null, null, 'C3', null,
   ])
   const [playHead, setPlayHead] = useState(0)
   const [delayWet, setDelayWet] = useState(0)
@@ -31,7 +31,7 @@ const PolyBeastCs = () => {
           setPlayHead(index)
           console.log(step, index);
         }}>
-        <Instrument type='duoSynth' />
+        <Instrument type='synth' />
         <Effect type='feedbackDelay' wet={delayWet} />
       </Track>
 

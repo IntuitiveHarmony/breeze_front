@@ -17,7 +17,18 @@ const SequencesList = () => {
   const sequencesStatus = useSelector(getSequencesStatus)
   const error = useSelector(getSequencesError)
 
+
+
+
   useEffect(() => {
+    //'initialize' the store
+    dispatch(loadCurrentSequence({
+      id: '',
+      name: '',
+      tempo: '',
+      polyBeastCs: {
+        steps: []
+      }}))
     if (sequencesStatus === 'idle') {
       dispatch(fetchSequences())
     }

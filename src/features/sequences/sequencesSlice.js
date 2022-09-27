@@ -1,8 +1,11 @@
 import { createSlice, nanoid, createAsyncThunk } from '@reduxjs/toolkit'
 import { updateSequence } from '../currentSequence/currentSequenceSlice'
+import { useSelector } from 'react-redux'
 import axios from 'axios'
 
 const SEQUENCES_URL = 'https://breeze-back.herokuapp.com/api/sequences'
+
+
 
 const initialState = {
   sequences: [],
@@ -44,7 +47,7 @@ export const deleteSequence = createAsyncThunk('currentSequence/deletedSequence'
     return response.data
   } catch (err) {
     return err.message
-  } 
+  }
 })
 
 const sequencesSlice = createSlice({

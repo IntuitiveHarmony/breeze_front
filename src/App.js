@@ -74,15 +74,9 @@ function App() {
         </div>
         <Song isPlaying={isPlaying} volume={volume} bpm={bpm}>
           <Synth />
-          <MonoSynth />
-          <MonoSynth2 />
+        {/*  <MonoSynth />
+          <MonoSynth2 /> */}
           <hr/>
-          <PolyBeastCs />
-          <PolyBeastCs />
-          <PolyBeastCs />
-          <PolyBeastCs />
-          <PolyBeastCs />
-          <PolyBeastCs />
           <PolyBeastCs />
           <SampleKick />
         </Song><br/>

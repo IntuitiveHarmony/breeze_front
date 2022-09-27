@@ -11,16 +11,12 @@ const SEQUENCES_URL = 'https://breeze-back.herokuapp.com/api/sequences'
 
 
 const initialState = {
-  id: '',
-  name: '',
-  tempo: '',
-  polyBeastCs: {
-    steps: []
-  }
+
 }
 
-
-//This will be the edit sequence eventually.  i think
+//-----------------------------------------------
+//  EDIT CURRENT SEQUENCE IN DATABASE
+//-----------------------------------------------
 export const updateSequence = createAsyncThunk('currentSequence/editSequence', async (editedSequence) => {
   try {
     const response = await axios.put(`${SEQUENCES_URL}/${editedSequence.id}`, editedSequence)
@@ -30,9 +26,6 @@ export const updateSequence = createAsyncThunk('currentSequence/editSequence', a
   }
 })
 
-// export const setCurrentSequence = (currentSequence) => {
-//   dispatch(loadCurrentSequence(currentSequence))
-// }
 
 const currentSequenceSlice = createSlice({
   name: 'currentSequence',
@@ -55,7 +48,7 @@ const currentSequenceSlice = createSlice({
     },
     updateStep: {
       reducer(state, action) {
-        state.polyBeastCs.steps = action.payload
+        state.currentSequence.polyBeastCs.steps.push(action.payload)
       }
     }
   }
