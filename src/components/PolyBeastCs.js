@@ -3,9 +3,10 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Song, Track, Instrument, Effect } from 'reactronica';
 import PolyBeastStep from './PolyBeastStep'
 import UnderGrid from './UnderGrid'
-import { selectCurrentSequence } from '../features/currentSequence/currentSequenceSlice'
+import { selectCurrentSequence, removeStep, addStep } from '../features/currentSequence/currentSequenceSlice'
 
 const PolyBeastCs = () => {
+  const dispatch = useDispatch()
   const currentSequence = useSelector(selectCurrentSequence)
   console.log(currentSequence)
 
@@ -13,6 +14,7 @@ const PolyBeastCs = () => {
   const [delayWet, setDelayWet] = useState(0)
   const [monoVolume, setMonoVolume] = useState(-10)
 
+  const [steps, setSteps] = useState(0)
 
 
   const handleDelayFeedback = (e) => {
@@ -23,11 +25,17 @@ const PolyBeastCs = () => {
   }
 
 
+  const handleAddStep = () => {
+    dispatch(addStep())
+  }
+  const handleRemoveStep = () => {
+    dispatch(removeStep())
+  }
 
   return (
     <>
     {currentSequence ? <>
-      <Track steps={currentSequence.polyBeastCs.steps} volume={monoVolume} onStepPlay={(step, index) => {
+      <Track steps={currentSequence.polyCsSteps} volume={monoVolume} onStepPlay={(step, index) => {
           setPlayHead(index)
           console.log(step, index);
         }}>
@@ -37,7 +45,7 @@ const PolyBeastCs = () => {
 
       </Track>
       <div className='synthGrid'>
-      {currentSequence.polyBeastCs.steps.map((step, index) => {
+      {currentSequence.polyCsSteps.map((step, index) => {
         return (
           <>
           <UnderGrid />
@@ -45,7 +53,10 @@ const PolyBeastCs = () => {
           </>
         )
       })}
+      <button onClick={handleRemoveStep}>- Step</button>
+      <button onClick={handleAddStep}>+ Step</button>
       </div>
+
     </> : <p>Waiting...</p> }
     </>
   )

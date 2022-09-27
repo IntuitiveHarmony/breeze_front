@@ -26,10 +26,15 @@ const SequencesList = () => {
       id: '',
       name: '',
       tempo: 100,
-      polyBeastCs: {
-        steps: [
-          'C2', null, null, null, 'C2', null, null, null, 'C2', null, null, null, 'C2', null, null, null,]
-      }}))
+      polyCsSteps: [],
+      polyCsDelay: 0,
+      polyCsDist: 0,
+      polyCsFilter: 0,
+      polyCsReverb: 0,
+      polyCsSynth: '',
+      polyCsVolume: 0
+
+      }))
     if (sequencesStatus === 'idle') {
       dispatch(fetchSequences())
     }

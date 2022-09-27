@@ -36,7 +36,13 @@
 
 9/25/22  
 -researching and experimenting with redux, can finally add things to the store.  Redux is starting to make more sense
--Established full CRUD!
+-Established full CRUD
+
+9/26/22  
+-experimenting with CRUD and the store, figuring out how the data will look
+
+9/27/22  
+-update server to reflect on line of the poly beast instrument
 
 
 
