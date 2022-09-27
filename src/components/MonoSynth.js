@@ -17,9 +17,6 @@ const MonoSynth = () => {
   const [monoVolume, setMonoVolume] = useState(-10)
 
 
-
-
-
   const handleDelayFeedback = (e) => {
     setDelayWet(e.target.value)
   }
@@ -33,8 +30,6 @@ const MonoSynth = () => {
 
   return (
     <>
-
-
       <Track steps={steps} volume={monoVolume} onStepPlay={(step, index) => {
           setPlayHead(index)
           console.log(step, index);

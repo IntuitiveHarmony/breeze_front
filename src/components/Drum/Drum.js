@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import Tone from 'tone'
+// import Tone from 'tone'
 
 const Drum = (props) => {
     const [playing, setPlaying] = useState(false);
@@ -23,7 +23,7 @@ const Drum = (props) => {
 	}, []);
 
   return (
-    <div className={`drum ${playing ? "playing" : ""}`} onClick={play}>
+    <div className={`${playing ? "playing" : ""} `} onClick={play}>
 		  <div className="key">{props.instrument}</div>
 	  </div>
   )
