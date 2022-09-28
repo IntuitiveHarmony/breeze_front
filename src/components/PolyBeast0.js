@@ -5,7 +5,7 @@ import PolyBeastStep from './PolyBeastStep'
 import UnderGrid from './UnderGrid'
 import { selectCurrentSequence, removeStep, addStep } from '../features/currentSequence/currentSequenceSlice'
 
-const PolyBeastCs = () => {
+const PolyBeast0 = () => {
   const dispatch = useDispatch()
   const currentSequence = useSelector(selectCurrentSequence)
 
@@ -97,4 +97,4 @@ const PolyBeastCs = () => {
     </>
   )
 }
-export default PolyBeastCs;
+export default PolyBeast0;

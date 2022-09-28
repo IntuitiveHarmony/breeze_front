@@ -60,7 +60,7 @@ const currentSequenceSlice = createSlice({
     },
     addStep: {
       reducer(state, action) {
-        state.currentSequence.poly0Steps.push('null')
+        state.currentSequence.poly0Steps.push(null)
       }
     }
   }
