@@ -117,4 +117,6 @@ const Test2 = () => {
     );
   };
 
+  // npm i classnames
+
 export default Test2
