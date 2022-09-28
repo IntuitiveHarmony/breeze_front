@@ -56,7 +56,7 @@ const PolyBeastCs = () => {
   return (
     <>
     {currentSequence ? <>
-      <Track steps={steps} volume={monoVolume} onStepPlay={(step, index) => {
+      <Track steps={currentSequence.poly0Steps} volume={monoVolume} onStepPlay={(step, index) => {
           setPlayHead(index)
           console.log(step, index);
         }}>
@@ -75,7 +75,7 @@ const PolyBeastCs = () => {
         :
         <button onClick={handleAddStep}>+ Step</button> }
 
-      {steps.map((step, index) => {
+      {currentSequence.poly0Steps.map((step, index) => {
         return (
           <>
           <UnderGrid />

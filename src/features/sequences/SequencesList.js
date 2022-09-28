@@ -26,13 +26,13 @@ const SequencesList = () => {
       id: '',
       name: '',
       tempo: 100,
-      polyCsSteps: [],
-      polyCsDelay: 0,
-      polyCsDist: 0,
-      polyCsFilter: 0,
-      polyCsReverb: 0,
-      polyCsSynth: '',
-      polyCsVolume: 0
+      poly0Steps: [],
+      poly0Delay: 0,
+      poly0Dist: 0,
+      poly0Filter: 0,
+      poly0Reverb: 0,
+      poly0Synth: '',
+      poly0Volume: 0
 
       }))
     if (sequencesStatus === 'idle') {
