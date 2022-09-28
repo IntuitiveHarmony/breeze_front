@@ -17,7 +17,7 @@ const PolyBeastCs = () => {
   const [delayWet, setDelayWet] = useState(0)
   const [monoVolume, setMonoVolume] = useState(-10)
 
-  const [steps, setSteps] = useState(0)
+  const [steps, setSteps] = useState([])
 
 
   const handleDelayFeedback = (e) => {
@@ -32,6 +32,7 @@ const PolyBeastCs = () => {
   //-------------------------------------------
   const handleAddStep = () => {
     dispatch(addStep())
+    console.log(currentSequence)
     if (currentSequence.polyCsSteps.length === 15) {
       setDisableAdd(true)
     }
@@ -41,6 +42,7 @@ const PolyBeastCs = () => {
   }
   const handleRemoveStep = () => {
     dispatch(removeStep())
+    console.log(currentSequence)
     if (currentSequence.polyCsSteps.length < 17) {
       setDisableAdd(false)
     }
@@ -77,7 +79,14 @@ const PolyBeastCs = () => {
         return (
           <>
           <UnderGrid />
-          <PolyBeastStep currentSequence={currentSequence} index={index} step={step} playHead={playHead} note={note}/>
+          <PolyBeastStep
+            currentSequence={currentSequence}
+            index={index}
+            step={step}
+            playHead={playHead}
+            note={note}
+            setSteps={setSteps}
+          />
           </>
         )
       })}

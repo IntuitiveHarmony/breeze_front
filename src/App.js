@@ -77,7 +77,6 @@ function App() {
           <MonoSynth2 /> */}
           <hr/>
           <PolyBeastCs />
-          <SampleKick />
         </Song><br/>
         <hr/>
 
