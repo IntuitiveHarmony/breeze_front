@@ -9,13 +9,14 @@
     margin-left: var(--note-margin-horz);
     margin-right: var(--note-margin-horz);
     cursor: pointer;
+    border-radius: 13px;
 }
 
 .note.on {
-    background-color: var(--color-dark-grey);
+    background-color: #957964;
     transition: background-color 120ms 0 ease;
 }
 
 .note.playing {
-    background-color: var(--color-highlight);
+    background-color: #81C14B;
 }

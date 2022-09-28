@@ -41,6 +41,7 @@ function App() {
   const [volume, setVolume] = useState()
   const [currentUser, setCurrentUser] = useState({})
 
+
   const handleVolume = (e) => {
     setVolume(e.target.value)
   }
@@ -51,6 +52,7 @@ function App() {
   const play = () => {
     setIsPLaying(!isPlaying)
   }
+
 
   //------------------------------------------
   //  STORE IS UNDEFINED AT PAGE LOAD
@@ -128,7 +130,7 @@ function App() {
           <EditSequenceForm />
           <DeleteSequenceForm />
         </div>
-        <Song isPlaying={isPlaying} volume={volume} bpm={bpm} bpm2={bpm2}>
+        <Song isPlaying={isPlaying} volume={volume} bpm={bpm}>
           <Synth />
           <MonoSynth />
           <MonoSynth2 />
@@ -152,8 +154,8 @@ function App() {
         <label>Tempo: {bpm} bpm</label>
         <input onChange={handleTempo} type='range' step='1' min='10' max='700' ></input>
         <hr />
-        <Drumkit />
-
+        
+        <h1 className="beats-title">polyBeats</h1>
         <Provider>
         <div>
         <main className="app">
@@ -162,13 +164,13 @@ function App() {
                 </div>
                 <Steps count={totalSteps} />
                 <div className="app_content">
-                    <PlayHead {...playHeadProps} />
                     <TrackList {...trackListProps} />
                 </div>
                 <footer className="app_footer">
                 </footer>
             </main >
-        </div></Provider>
+        </div>
+        </Provider>
       </>
   );
 }

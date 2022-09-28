@@ -1,20 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300&display=swap');
 
 .toolbar {
 font-weight: 800;
-display: flex;
+/* display: flex; */
 align-items: center;
+font-family: 'Inter Tight', sans-serif;
+
 }
 
 .form_element {
 background: transparent;
-border: 1px solid var(--color-dark-grey);
+border: 2px solid var(--color-dark-grey);
 margin-left: calc(var(--spacer) / 2);
 height: var(--form-element-height);
 box-sizing: border-box;
 font-weight: 800;
 font-size: 0.9rem;
 text-align: center;
-color: var(--color-fg)
+color: var(--color-fg);
+font-family: 'Inter Tight', sans-serif;
+
 }
 
 .button_play_pause, .button_stop {
@@ -28,7 +33,7 @@ fill: var(--color-fg);
 }
 
 .input_bpm {
-width: var(--input-bpm-width);
+width: 4em;
 }
 
 .label_bpm {
@@ -37,7 +42,7 @@ margin-right: var(--spacer);
 }
 
 .select_sequence {
-margin-left: var(--spacer);
+/* margin-left: var(--spacer); */
 text-transform: uppercase;
 border-radius: 0;
 -webkit-appearance: none;
@@ -47,4 +52,10 @@ background-position: 95% 50%;
 background-repeat: no-repeat;
 background-size: 16px;
 padding: 0 40px 0 10px;
+margin-bottom: 1em;
+}
+
+.mute-btn {
+    margin-left: 2em;
+    width: 9em;
 }

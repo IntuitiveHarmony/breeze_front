@@ -8,11 +8,12 @@
     flex: 0 0 auto;
     justify-content: flex-end;
     align-items: center;
-    text-transform: uppercase;
-    font-weight: 900;
-    font-size: 1.1rem;
+    text-transform: lowercase;
+    font-weight: 500;
+    font-size: 1.4rem;
     padding: var(--spacer);
     width: var(--track-title-width);
+    font-family: 'Inter Tight', sans-serif;
   }
 
   .track_notes {

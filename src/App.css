@@ -231,3 +231,11 @@ h2{
   border: white solid 3px;
   margin-bottom: 3em;
 }
+
+/* //////////
+  polyBeats
+//////////*/
+
+.beats-title {
+  margin: 1.5em auto;
+}
