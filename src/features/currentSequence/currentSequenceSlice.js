@@ -18,6 +18,7 @@ const initialState = {
 //  EDIT CURRENT SEQUENCE IN DATABASE
 //-----------------------------------------------
 export const updateSequence = createAsyncThunk('currentSequence/editSequence', async (editedSequence) => {
+  console.log(editedSequence)
   try {
     const response = await axios.put(`${SEQUENCES_URL}/${editedSequence.id}`, editedSequence)
     return response.data
@@ -48,18 +49,18 @@ const currentSequenceSlice = createSlice({
     },
     updateStep: {
       reducer(state, action) {
-        state.currentSequence.polyCsSteps[action.payload[0]] = action.payload[1]
+        state.currentSequence.poly0Steps[action.payload[0]] = action.payload[1]
         console.log(action.payload)
       }
     },
     removeStep: {
       reducer(state, action) {
-        state.currentSequence.polyCsSteps.pop()
+        state.currentSequence.poly0Steps.pop()
       }
     },
     addStep: {
       reducer(state, action) {
-        state.currentSequence.polyCsSteps.push(null)
+        state.currentSequence.poly0Steps.push('null')
       }
     }
   }

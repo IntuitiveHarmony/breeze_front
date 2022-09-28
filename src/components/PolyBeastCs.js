@@ -33,20 +33,20 @@ const PolyBeastCs = () => {
   const handleAddStep = () => {
     dispatch(addStep())
     console.log(currentSequence)
-    if (currentSequence.polyCsSteps.length === 15) {
+    if (currentSequence.poly0Steps.length === 15) {
       setDisableAdd(true)
     }
-   if (currentSequence.polyCsSteps.length < 16) {
+   if (currentSequence.poly0Steps.length < 16) {
       setDisableRemove(false)
     }
   }
   const handleRemoveStep = () => {
     dispatch(removeStep())
     console.log(currentSequence)
-    if (currentSequence.polyCsSteps.length < 17) {
+    if (currentSequence.poly0Steps.length < 17) {
       setDisableAdd(false)
     }
-    if (currentSequence.polyCsSteps.length === 2) {
+    if (currentSequence.poly0Steps.length === 2) {
       setDisableRemove(true)
     }
   }
@@ -56,7 +56,7 @@ const PolyBeastCs = () => {
   return (
     <>
     {currentSequence ? <>
-      <Track steps={currentSequence.polyCsSteps} volume={monoVolume} onStepPlay={(step, index) => {
+      <Track steps={steps} volume={monoVolume} onStepPlay={(step, index) => {
           setPlayHead(index)
           console.log(step, index);
         }}>
@@ -75,7 +75,7 @@ const PolyBeastCs = () => {
         :
         <button onClick={handleAddStep}>+ Step</button> }
 
-      {currentSequence.polyCsSteps.map((step, index) => {
+      {steps.map((step, index) => {
         return (
           <>
           <UnderGrid />

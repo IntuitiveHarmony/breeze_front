@@ -46,6 +46,7 @@ const SequencesList = () => {
   const handleSelect = (e) => {
     for (let i = 0; i < sequences.length; i++) {
       if (sequences[i].id == e.target.value) {
+        dispatch(loadCurrentSequence(sequences[i]))
       }
     }
   }

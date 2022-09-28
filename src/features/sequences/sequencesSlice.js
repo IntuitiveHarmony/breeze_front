@@ -30,6 +30,7 @@ export const fetchSequences = createAsyncThunk('sequences/fetchSequences', async
 //     ADD NEW SEQUENCE TO OUR DATA BASE
 //-----------------------------------------------
 export const addNewSequence = createAsyncThunk('sequences/addNewSequence', async (initialSequence) => {
+  console.log(initialSequence)
   try {
     const response = await axios.post(SEQUENCES_URL, initialSequence)
     return response.data
