@@ -9,6 +9,18 @@ const AddSequenceForm = () => {
 
   const [name, setName] = useState('')
   const [tempo, setTempo] = useState('')
+  const [initial, setInitial] = useState ({
+    name: '',
+    tempo: '',
+    polyCsSteps: [],
+    polyCsSynth: '',
+    polyCsVolume: '',
+    polyCsFilter: '',
+    polyCsDist: '',
+    polyCsReverb: '',
+    polyCsDelay: ''
+
+  })
   const [addRequestStatus, setAddRequestStatus] = useState('idle')
 
   const onNameChanged = e => setName(e.target.value)
@@ -16,11 +28,11 @@ const AddSequenceForm = () => {
 
   const canSave = Boolean(name) && addRequestStatus === 'idle'
 
-  const onSaveSequenceClicked = () => {
+  const handleAddNewSequence = () => {
     if (canSave) {
       try {
         setAddRequestStatus('Pending')
-        dispatch(addNewSequence({name, tempo})).unwrap()
+        dispatch(addNewSequence(initial)).unwrap()
 
         setName('')
         setTempo('')
@@ -57,7 +69,7 @@ const AddSequenceForm = () => {
                 /><br/>
                 <button
                   type='button'
-                  onClick={onSaveSequenceClicked}
+                  onClick={handleAddNewSequence}
                 >Create New Sequence</button>
               </form>
           </details>

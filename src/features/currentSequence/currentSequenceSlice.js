@@ -13,9 +13,8 @@ const SEQUENCES_URL = 'https://breeze-back.herokuapp.com/api/sequences'
 
 
 const initialState = {
-  // id: '',
-  // name: '',
-  // tempo: ''
+
+
 }
 
 // const Context = createContext({
@@ -25,19 +24,20 @@ const initialState = {
 // })
 
 
-//This will be the edit sequence eventually.  i think
+
+//-----------------------------------------------
+//  EDIT CURRENT SEQUENCE IN DATABASE
+//-----------------------------------------------
 export const updateSequence = createAsyncThunk('currentSequence/editSequence', async (editedSequence) => {
+  console.log(editedSequence)
   try {
     const response = await axios.put(`${SEQUENCES_URL}/${editedSequence.id}`, editedSequence)
     return response.data
   } catch (err) {
     return err.message
-  } 
+  }
 })
 
-// export const setCurrentSequence = (currentSequence) => {
-//   dispatch(loadCurrentSequence(currentSequence))
-// }
 
 const currentSequenceSlice = createSlice({
   name: 'currentSequence',
@@ -58,7 +58,22 @@ const currentSequenceSlice = createSlice({
         state.currentSequence.name = action.payload
       }
     },
-
+    updateStep: {
+      reducer(state, action) {
+        state.currentSequence.poly0Steps[action.payload[0]] = action.payload[1]
+        console.log(action.payload)
+      }
+    },
+    removeStep: {
+      reducer(state, action) {
+        state.currentSequence.poly0Steps.pop()
+      }
+    },
+    addStep: {
+      reducer(state, action) {
+        state.currentSequence.poly0Steps.push('null')
+      }
+    }
   }
 })
 
@@ -68,6 +83,6 @@ const currentSequenceSlice = createSlice({
 export const selectCurrentSequence = (state) => state.currentSequence.currentSequence
 // this will put the current state in the store
 
-export const { loadCurrentSequence, changeTempo, changeName } = currentSequenceSlice.actions
+export const { loadCurrentSequence, changeTempo, changeName, updateStep, addStep, removeStep } = currentSequenceSlice.actions
 
 export default currentSequenceSlice.reducer
