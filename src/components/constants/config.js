@@ -6,7 +6,7 @@ const sequenceList = [
         trackList: [
             {
                 title: 'Kick',
-                soundFile: 'kick',
+                soundFile: 'kick1',
                 onNotes: [0, 2, 4, 6, 8, 10, 12],
             },
             {
@@ -113,7 +113,21 @@ const soundFiles = {
     'kick': require('./kick10.wav'),
     'snare': require('./snare1.wav'),
     'hh_open': '/sounds/hh_open.wav',
-    'hh_closed': require('./closedhat1.mp3')
+    'hh_closed': require('./closedhat1.mp3'),
+    'kick1' : require('https://github.com/IntuitiveHarmony/breeze_front/blob/jey2/src/components/constants/kick10.wav')
+
 }
+
+const kickFiles = [
+    {sound: "https://github.com/IntuitiveHarmony/breeze_front/blob/jey2/src/components/constants/kick10.wav", label: 'Kick1'}
+]
+
+// const soundPlay = () => {
+//     const sound = new Howl ({
+//         src,
+//         html5: true
+//     })
+//     sound.play()
+// }
 
 export { sequenceList, soundFiles }

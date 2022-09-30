@@ -1,6 +1,5 @@
 import {useState} from 'react';
 import { Song, Track, Instrument, Effect } from 'reactronica';
-import LooperProvider from './Looper/LooperProvider';
 
 const DrumPadStep = (props) => {
   const [active, setActive] = useState(false)

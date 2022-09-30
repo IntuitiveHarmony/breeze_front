@@ -1,7 +1,9 @@
 import {  createSlice,
           nanoid,
           createAsyncThunk,
-          combineReducers } from '@reduxjs/toolkit'
+          combineReducers,
+          useContext, 
+          createContext } from '@reduxjs/toolkit'
 import { fetchSequences } from '../sequences/sequencesSlice'
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios'
@@ -15,6 +17,12 @@ const initialState = {
   // name: '',
   // tempo: ''
 }
+
+// const Context = createContext({
+//   drumSequence: {},
+//   toggleNote: () => { },
+//   selectSequence: () => { },
+// })
 
 
 //This will be the edit sequence eventually.  i think
@@ -49,7 +57,8 @@ const currentSequenceSlice = createSlice({
       reducer(state, action) {
         state.currentSequence.name = action.payload
       }
-    }
+    },
+
   }
 })
 

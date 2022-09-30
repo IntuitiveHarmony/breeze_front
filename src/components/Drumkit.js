@@ -1,9 +1,6 @@
 import {useState} from 'react'
 import Drum from './Drum/Drum'
-import LooperApp from './Looper/LooperApp'
-import Sequencer from './Looper/sequencer'
-import LooperProvider from './Looper/LooperProvider'
-import Grid from './Looper/grid'
+
 
 
 const Drumkit = () => {
