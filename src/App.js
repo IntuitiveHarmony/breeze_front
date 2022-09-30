@@ -16,6 +16,7 @@ import MonoSynth from './components/MonoSynth'
 import MonoSynth2 from './components/MonoSynth2'
 import PolyBeast0 from './components/PolyBeast0'
 import PolyBeast1 from './components/PolyBeast1'
+import PolyBeast2 from './components/PolyBeast2'
 import SampleKick from './components/SampleKick'
 import Login from './components/Login'
 import Navbar from './components/Navbar';
@@ -121,9 +122,9 @@ function App() {
       <>
         <h1>polybeast</h1>
         <h3>{sequenceName}</h3>
-        
+
         <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser} />
-        
+
         <div className='crud-container'>
           <AddSequenceForm/>
           <SequencesList />
@@ -135,6 +136,7 @@ function App() {
         {/*  <MonoSynth />
           <MonoSynth2 /> */}
           <hr/>
+          <PolyBeast2 />
           <PolyBeast1 />
           <PolyBeast0 />
 
@@ -148,7 +150,7 @@ function App() {
         <label>Tempo: {bpm} bpm</label>
         <input onChange={handleTempo} type='range' step='1' min='10' max='700' ></input>
         <hr />
-        
+
         <h1 className="beats-title">polyBeats</h1>
         <Provider>
         <div>

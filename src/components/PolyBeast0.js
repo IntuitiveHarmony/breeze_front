@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Song, Track, Instrument, Effect } from 'reactronica';
-import PolyBeastStep from './PolyBeastStep'
+import PolyBeast0Step from './PolyBeast0Step'
 import UnderGrid from './UnderGrid'
 import { selectCurrentSequence, removeStep, addStep } from '../features/currentSequence/currentSequenceSlice'
 
@@ -79,7 +79,7 @@ const PolyBeast0 = () => {
         return (
           <>
           <UnderGrid />
-          <PolyBeastStep
+          <PolyBeast0Step
             currentSequence={currentSequence}
             index={index}
             step={step}

@@ -12,23 +12,42 @@ const AddSequenceForm = () => {
   const [initial, setInitial] = useState ({
     name: '',
     tempo: '',
-    polyCsSteps: [],
-    polyCsSynth: '',
-    polyCsVolume: '',
-    polyCsFilter: '',
-    polyCsDist: '',
-    polyCsReverb: '',
-    polyCsDelay: ''
+    poly0Steps: ['d'],
+    poly0Delay: 0,
+    poly0Dist: 0,
+    poly0Filter: 0,
+    poly0Reverb: 0,
+    poly0Synth: '',
+    poly0Volume: 0,
+    poly1Steps: ['d'],
+    poly1Delay: 0,
+    poly1Dist: 0,
+    poly1Filter: 0,
+    poly1Reverb: 0,
+    poly1Synth: '',
+    poly1Volume: 0,
+    poly2Steps: ['d'],
+    poly2Delay: 0,
+    poly2Dist: 0,
+    poly2Filter: 0,
+    poly2Reverb: 0,
+    poly2Synth: '',
+    poly2Volume: 0
 
   })
   const [addRequestStatus, setAddRequestStatus] = useState('idle')
 
-  const onNameChanged = e => setName(e.target.value)
-  const onTempoChanged = e => setTempo(e.target.value)
+  const onNameChanged = (e) => {
+    setInitial({...initial, [e.target.name]: e.target.value})
+  }
+  const onTempoChanged = (e) => {
+    setInitial({...initial, [e.target.name]: e.target.value})
+  }
 
   const canSave = Boolean(name) && addRequestStatus === 'idle'
 
   const handleAddNewSequence = () => {
+    console.log(initial)
     if (canSave) {
       try {
         setAddRequestStatus('Pending')
@@ -55,16 +74,14 @@ const AddSequenceForm = () => {
                 <input
                   type='text'
                   id='sequenceName'
-                  name='sequenceName'
-                  value={name}
+                  name='name'
                   onChange={onNameChanged}
                 /><br/>
                 <label htmlFor='sequenceTempo'>Tempo: </label>
                 <input
                   type='text'
                   id='sequenceTempo'
-                  name='sequenceTempo'
-                  value={tempo}
+                  name='tempo'
                   onChange={onTempoChanged}
                 /><br/>
                 <button

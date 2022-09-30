@@ -2,7 +2,7 @@ import {  createSlice,
           nanoid,
           createAsyncThunk,
           combineReducers,
-          useContext, 
+          useContext,
           createContext } from '@reduxjs/toolkit'
 import { fetchSequences } from '../sequences/sequencesSlice'
 import { useSelector, useDispatch } from 'react-redux';
@@ -64,6 +64,18 @@ const currentSequenceSlice = createSlice({
         console.log(action.payload)
       }
     },
+    updateStep1: {
+      reducer(state, action) {
+        state.currentSequence.poly1Steps[action.payload[0]] = action.payload[1]
+        console.log(action.payload)
+      }
+    },
+    updateStep2: {
+      reducer(state, action) {
+        state.currentSequence.poly2Steps[action.payload[0]] = action.payload[1]
+        console.log(action.payload)
+      }
+    },
     removeStep: {
       reducer(state, action) {
         state.currentSequence.poly0Steps.pop()
@@ -83,6 +95,6 @@ const currentSequenceSlice = createSlice({
 export const selectCurrentSequence = (state) => state.currentSequence.currentSequence
 // this will put the current state in the store
 
-export const { loadCurrentSequence, changeTempo, changeName, updateStep, addStep, removeStep } = currentSequenceSlice.actions
+export const { loadCurrentSequence, changeTempo, changeName, updateStep, updateStep1, updateStep2,   addStep, removeStep } = currentSequenceSlice.actions
 
 export default currentSequenceSlice.reducer

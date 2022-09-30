@@ -1,10 +1,10 @@
 import {useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { Song, Track, Instrument, Effect } from 'reactronica';
-import { updateStep } from '../features/currentSequence/currentSequenceSlice'
+import { updateStep2 } from '../features/currentSequence/currentSequenceSlice'
 import { selectCurrentSequence } from '../features/currentSequence/currentSequenceSlice'
 
-const PolyBeastStep = (props) => {
+const PolyBeast2Step = (props) => {
   const dispatch = useDispatch()
   const currentSequence = useSelector(selectCurrentSequence)
   const [active, setActive] = useState(false)
@@ -12,12 +12,12 @@ const PolyBeastStep = (props) => {
   const [noteNull, setNoteNull] = useState([props.index, 'null'])
 
   const handleActivateStep = () => {
-    dispatch(updateStep(noteIndex))
+    dispatch(updateStep2(noteIndex))
     // props.setSteps(currentSequence.polyCsSteps)
     console.log(currentSequence)
   }
   const handleDeactivateStep = () => {
-    dispatch(updateStep(noteNull))
+    dispatch(updateStep2(noteNull))
     // props.setSteps(currentSequence.polyCsSteps)
     console.log(currentSequence)
   }
@@ -25,7 +25,7 @@ const PolyBeastStep = (props) => {
 
   return (
     <>
-    {currentSequence.poly0Steps[props.index] === 'null' ?
+    {currentSequence.poly2Steps[props.index] === 'null' ?
     props.playHead === props.index ?
     <>
       <div className='underStep'></div>
@@ -54,4 +54,4 @@ const PolyBeastStep = (props) => {
     </>
   )
 }
-export default PolyBeastStep;
+export default PolyBeast2Step;
