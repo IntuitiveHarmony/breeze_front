@@ -1,11 +1,13 @@
 import {useState} from 'react'
 import Drum from './Drum/Drum'
 
+
+
 const Drumkit = () => {
     const [sounds, setSounds] = useState([
 		{
 			name: "kick1",
-			sound: require("./sounds/kick10.mp3"),
+			sound: require("./sounds/kick10.wav"),
 			key: "F",
             instrument: "F - kick"
 		},
@@ -57,6 +59,7 @@ const Drumkit = () => {
 					<Drum key={i} letter={sound.key} sound={sound.sound} instrument={sound.instrument} />
 				))}
 			</div>
+            
     </div>
   )
 }

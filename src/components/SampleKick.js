@@ -15,7 +15,7 @@ const SampleKick = (props) => {
       <Track steps={steps}  onStepPlay={(step, index) => {
           setPlayHead(index)
           }}>
-          <Instrument type='sampler'/>
+          <Instrument type='sampler' />
       </Track>
       <div className='synthGrid'>
       {steps.map((step, index) => {

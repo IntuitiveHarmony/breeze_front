@@ -1,7 +1,9 @@
 import {  createSlice,
           nanoid,
           createAsyncThunk,
-          combineReducers } from '@reduxjs/toolkit'
+          combineReducers,
+          useContext, 
+          createContext } from '@reduxjs/toolkit'
 import { fetchSequences } from '../sequences/sequencesSlice'
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios'
@@ -12,7 +14,16 @@ const SEQUENCES_URL = 'https://breeze-back.herokuapp.com/api/sequences'
 
 const initialState = {
 
+
 }
+
+// const Context = createContext({
+//   drumSequence: {},
+//   toggleNote: () => { },
+//   selectSequence: () => { },
+// })
+
+
 
 //-----------------------------------------------
 //  EDIT CURRENT SEQUENCE IN DATABASE
