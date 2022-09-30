@@ -32,8 +32,21 @@ const SequencesList = () => {
       poly0Filter: 0,
       poly0Reverb: 0,
       poly0Synth: '',
-      poly0Volume: 0
-
+      poly0Volume: 0,
+      poly1Steps: [],
+      poly1Delay: 0,
+      poly1Dist: 0,
+      poly1Filter: 0,
+      poly1Reverb: 0,
+      poly1Synth: '',
+      poly1Volume: 0,
+      poly2Steps: [],
+      poly2Delay: 0,
+      poly2Dist: 0,
+      poly2Filter: 0,
+      poly2Reverb: 0,
+      poly2Synth: '',
+      poly2Volume: 0
       }))
     if (sequencesStatus === 'idle') {
       dispatch(fetchSequences())

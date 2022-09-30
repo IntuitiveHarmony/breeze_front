@@ -15,6 +15,7 @@ import Synth from './components/Synth'
 import MonoSynth from './components/MonoSynth'
 import MonoSynth2 from './components/MonoSynth2'
 import PolyBeast0 from './components/PolyBeast0'
+import PolyBeast1 from './components/PolyBeast1'
 import SampleKick from './components/SampleKick'
 import Login from './components/Login'
 import Navbar from './components/Navbar';
@@ -76,6 +77,7 @@ function App() {
         {/*  <MonoSynth />
           <MonoSynth2 /> */}
           <hr/>
+          <PolyBeast1 />
           <PolyBeast0 />
         </Song><br/>
         <hr/>
