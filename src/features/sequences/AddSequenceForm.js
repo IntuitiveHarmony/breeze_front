@@ -1,10 +1,15 @@
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { nanoid } from '@reduxjs/toolkit'
 
-import { addNewSequence } from './sequencesSlice'
+import { addNewSequence, selectAllSequences } from './sequencesSlice'
+import { loadCurrentSequence } from '../currentSequence/currentSequenceSlice'
+
+
 
 const AddSequenceForm = () => {
+  const allSequences = useSelector(selectAllSequences)
+
   const dispatch = useDispatch()
 
   const [name, setName] = useState('')
@@ -12,21 +17,21 @@ const AddSequenceForm = () => {
   const [initial, setInitial] = useState ({
     name: '',
     tempo: 0,
-    poly0Steps: ['d', 'f'],
+    poly0Steps: ['null','null','null','null','null','null','null','null'],
     poly0Delay: 0,
     poly0Dist: 0,
     poly0Filter: 0,
     poly0Reverb: 0,
     poly0Synth: 'membraneSynth',
     poly0Volume: 0,
-    poly1Steps: ['d', 'f'],
+    poly1Steps: ['null','null','null','null','null','null','null','null'],
     poly1Delay: 0,
     poly1Dist: 0,
     poly1Filter: 0,
     poly1Reverb: 0,
     poly1Synth: 'membraneSynth',
     poly1Volume: 0,
-    poly2Steps: ['d','d', 'f'],
+    poly2Steps: ['null','null','null','null','null','null','null','null'],
     poly2Delay: 0,
     poly2Dist: 0,
     poly2Filter: 0,
@@ -59,6 +64,7 @@ const AddSequenceForm = () => {
       } finally {
         setAddRequestStatus('idle')
       }
+      dispatch(loadCurrentSequence(initial))
   }
 
 
