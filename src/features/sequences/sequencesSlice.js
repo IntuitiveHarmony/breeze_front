@@ -6,7 +6,6 @@ import axios from 'axios'
 const SEQUENCES_URL = 'https://breeze-back.herokuapp.com/api/sequences'
 
 
-
 const initialState = {
   sequences: [],
   status: 'idle',
@@ -52,6 +51,7 @@ export const deleteSequence = createAsyncThunk('currentSequence/deletedSequence'
 })
 
 const sequencesSlice = createSlice({
+
   name: 'sequences',
   initialState,
   reducers: {
@@ -88,9 +88,11 @@ const sequencesSlice = createSlice({
         state.sequences.push(action.payload)
       })
       .addCase(updateSequence.fulfilled, (state, action) => {
-        state.sequences = [...action.payload]
-      } )
-
+        state.sequences = [...state.sequences, action.payload]
+      })
+      .addCase(deleteSequence.fulfilled, (state, action) => {
+        state.sequences.pop(action.payload)
+      })
   }
 })
 

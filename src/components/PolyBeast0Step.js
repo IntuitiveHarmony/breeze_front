@@ -4,7 +4,7 @@ import { Song, Track, Instrument, Effect } from 'reactronica';
 import { updateStep } from '../features/currentSequence/currentSequenceSlice'
 import { selectCurrentSequence } from '../features/currentSequence/currentSequenceSlice'
 
-const PolyBeastStep = (props) => {
+const PolyBeast0Step = (props) => {
   const dispatch = useDispatch()
   const currentSequence = useSelector(selectCurrentSequence)
   const [active, setActive] = useState(false)
@@ -28,30 +28,26 @@ const PolyBeastStep = (props) => {
     {currentSequence.poly0Steps[props.index] === 'null' ?
     props.playHead === props.index ?
     <>
-      <div className='underStep'></div>
       <div className='synthStep playHead' onClick={() => handleActivateStep()}>
       </div>
     </>
       :
     <>
-      <div className='underStep'></div>
       <div className='synthStep' onClick={() => handleActivateStep()}>
       </div>
     </>
       :
       props.playHead === props.index ?
       <>
-        <div className='underStep'></div>
         <div className='synthStep playHead active' onClick={() => handleDeactivateStep()}>
         </div>
       </>
       :
       <>
-        <div className='underStep'></div>
         <div className='synthStep active' onClick={() => handleDeactivateStep()}>
         </div>
       </>}
     </>
   )
 }
-export default PolyBeastStep;
+export default PolyBeast0Step;

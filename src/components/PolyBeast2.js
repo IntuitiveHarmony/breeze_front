@@ -1,16 +1,16 @@
 import {useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Song, Track, Instrument, Effect } from 'reactronica';
-import PolyBeast1Step from './PolyBeast1Step'
+import PolyBeast2Step from './PolyBeast2Step'
 import UnderGrid from './UnderGrid'
-import { selectCurrentSequence, removeStep1, addStep1 } from '../features/currentSequence/currentSequenceSlice'
+import { selectCurrentSequence, removeStep2, addStep2 } from '../features/currentSequence/currentSequenceSlice'
 
-const PolyBeast1 = () => {
+const PolyBeast2 = () => {
   const dispatch = useDispatch()
   const currentSequence = useSelector(selectCurrentSequence)
 
 
-  const [note, setNote] = useState('F#3')
+  const [note, setNote] = useState('D#4')
   const [disableRemove, setDisableRemove] = useState(false)
   const [disableAdd, setDisableAdd] = useState(false)
   const [playHead, setPlayHead] = useState(1)
@@ -31,22 +31,22 @@ const PolyBeast1 = () => {
   //    ADD REMOVE STEPS AND DISABLE BUTTONS
   //-------------------------------------------
   const handleAddStep = () => {
-    dispatch(addStep1())
+    dispatch(addStep2())
     console.log(currentSequence)
-    if (currentSequence.poly1Steps.length === 15) {
+    if (currentSequence.poly2Steps.length === 15) {
       setDisableAdd(true)
     }
-   if (currentSequence.poly1Steps.length < 16) {
+   if (currentSequence.poly2Steps.length < 16) {
       setDisableRemove(false)
     }
   }
   const handleRemoveStep = () => {
-    dispatch(removeStep1())
+    dispatch(removeStep2())
     console.log(currentSequence)
-    if (currentSequence.poly1Steps.length < 17) {
+    if (currentSequence.poly2Steps.length < 17) {
       setDisableAdd(false)
     }
-    if (currentSequence.poly1Steps.length === 2) {
+    if (currentSequence.poly2Steps.length === 2) {
       setDisableRemove(true)
     }
   }
@@ -56,7 +56,7 @@ const PolyBeast1 = () => {
   return (
     <>
     {currentSequence ? <>
-      <Track steps={currentSequence.poly1Steps} volume={monoVolume} onStepPlay={(step, index) => {
+      <Track steps={currentSequence.poly2Steps} volume={monoVolume} onStepPlay={(step, index) => {
           setPlayHead(index)
           console.log(step, index);
         }}>
@@ -75,10 +75,10 @@ const PolyBeast1 = () => {
         :
         <button onClick={handleAddStep}>+ Step</button> }
 
-      {currentSequence.poly1Steps.map((step, index) => {
+      {currentSequence.poly2Steps.map((step, index) => {
         return (
           <>
-          <PolyBeast1Step
+          <PolyBeast2Step
             currentSequence={currentSequence}
             index={index}
             step={step}
@@ -96,4 +96,4 @@ const PolyBeast1 = () => {
     </>
   )
 }
-export default PolyBeast1;
+export default PolyBeast2;
