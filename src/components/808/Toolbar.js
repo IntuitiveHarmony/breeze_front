@@ -13,7 +13,7 @@ const ToolBar = ({
 }) => {
     const { sequence: { id: selectedSequenceID }, selectSequence } = useContext(Context)
 
-    function togglePlayback() {
+    const togglePlayback = () => {
         if (isSequencePlaying) {
             setPastLapse(l => l + performance.now() - startTime)
             setStartTime(null)
@@ -22,12 +22,12 @@ const ToolBar = ({
         }
     }
 
-    function stopPlayback() {
+    const stopPlayback = () => {
         setPastLapse(0)
         setStartTime(null)
     }
 
-    function updateBPM(e) {
+    const updateBPM = (e) => {
         setBPM(e.target.value)
     }
 

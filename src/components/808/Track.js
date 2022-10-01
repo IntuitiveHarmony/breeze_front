@@ -33,7 +33,7 @@ const Track = ({
     return (
         <div className="track">
             <header className="track_title">{title}</header>
-            <main className="track_notes">
+            <main className="track_notes" >
                 {notes}
             </main>
         </div>

@@ -1,4 +1,4 @@
-# Breeze Beat Machine
+# PolyBeast and PolyBeats Machine
 
 [Live Site](https://intuitiveharmony.github.io/breeze_front/) | [Front End Repo](https://github.com/IntuitiveHarmony/breeze_front) | [API](https://breeze-back.herokuapp.com/api/sequences) | [Back End Repo](https://github.com/IntuitiveHarmony/breeze_back) |
 
