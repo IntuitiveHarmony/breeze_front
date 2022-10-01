@@ -78,7 +78,6 @@ const PolyBeast0 = () => {
       {currentSequence.poly0Steps.map((step, index) => {
         return (
           <>
-          <UnderGrid />
           <PolyBeast0Step
             currentSequence={currentSequence}
             index={index}

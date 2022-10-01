@@ -83,7 +83,26 @@ const currentSequenceSlice = createSlice({
     },
     addStep: {
       reducer(state, action) {
-        state.currentSequence.poly0Steps.push('null')
+        state.currentSequence.poly0Steps.push(null)
+      }
+    },
+    removeStep1: {
+      reducer(state, action) {
+        state.currentSequence.poly1Steps.pop()
+      }
+    },
+    addStep1: {
+      reducer(state, action) {
+        state.currentSequence.poly1Steps.push('null')
+      }
+    },removeStep2: {
+      reducer(state, action) {
+        state.currentSequence.poly2Steps.pop()
+      }
+    },
+    addStep2: {
+      reducer(state, action) {
+        state.currentSequence.poly2Steps.push('null')
       }
     }
   }
@@ -95,6 +114,6 @@ const currentSequenceSlice = createSlice({
 export const selectCurrentSequence = (state) => state.currentSequence.currentSequence
 // this will put the current state in the store
 
-export const { loadCurrentSequence, changeTempo, changeName, updateStep, updateStep1, updateStep2,   addStep, removeStep } = currentSequenceSlice.actions
+export const { loadCurrentSequence, changeTempo, changeName, updateStep, updateStep1, updateStep2,   addStep, addStep1, addStep2,removeStep, removeStep1, removeStep2 } = currentSequenceSlice.actions
 
 export default currentSequenceSlice.reducer

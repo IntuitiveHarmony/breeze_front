@@ -131,11 +131,11 @@ function App() {
           <EditSequenceForm />
           <DeleteSequenceForm />
         </div>
+        <Synth />
+        <hr/>
         <Song isPlaying={isPlaying} volume={volume} bpm={bpm}>
-          <Synth />
-        {/*  <MonoSynth />
-          <MonoSynth2 /> */}
-          <hr/>
+
+
           <PolyBeast2 />
           <PolyBeast1 />
           <PolyBeast0 />

@@ -28,26 +28,22 @@ const PolyBeast0Step = (props) => {
     {currentSequence.poly0Steps[props.index] === 'null' ?
     props.playHead === props.index ?
     <>
-      <div className='underStep'></div>
       <div className='synthStep playHead' onClick={() => handleActivateStep()}>
       </div>
     </>
       :
     <>
-      <div className='underStep'></div>
       <div className='synthStep' onClick={() => handleActivateStep()}>
       </div>
     </>
       :
       props.playHead === props.index ?
       <>
-        <div className='underStep'></div>
         <div className='synthStep playHead active' onClick={() => handleDeactivateStep()}>
         </div>
       </>
       :
       <>
-        <div className='underStep'></div>
         <div className='synthStep active' onClick={() => handleDeactivateStep()}>
         </div>
       </>}

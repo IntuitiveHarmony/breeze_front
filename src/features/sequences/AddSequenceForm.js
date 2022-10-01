@@ -11,27 +11,27 @@ const AddSequenceForm = () => {
   const [tempo, setTempo] = useState('')
   const [initial, setInitial] = useState ({
     name: '',
-    tempo: '',
-    poly0Steps: ['d'],
+    tempo: 0,
+    poly0Steps: ['d', 'f'],
     poly0Delay: 0,
     poly0Dist: 0,
     poly0Filter: 0,
     poly0Reverb: 0,
-    poly0Synth: '',
+    poly0Synth: 'membraneSynth',
     poly0Volume: 0,
-    poly1Steps: ['d'],
+    poly1Steps: ['d', 'f'],
     poly1Delay: 0,
     poly1Dist: 0,
     poly1Filter: 0,
     poly1Reverb: 0,
-    poly1Synth: '',
+    poly1Synth: 'membraneSynth',
     poly1Volume: 0,
-    poly2Steps: ['d'],
+    poly2Steps: ['d','d', 'f'],
     poly2Delay: 0,
     poly2Dist: 0,
     poly2Filter: 0,
     poly2Reverb: 0,
-    poly2Synth: '',
+    poly2Synth: 'membraneSynth',
     poly2Volume: 0
 
   })
@@ -41,14 +41,13 @@ const AddSequenceForm = () => {
     setInitial({...initial, [e.target.name]: e.target.value})
   }
   const onTempoChanged = (e) => {
-    setInitial({...initial, [e.target.name]: e.target.value})
+    setInitial({...initial, [e.target.name]: Number(e.target.value)})
   }
 
-  const canSave = Boolean(name) && addRequestStatus === 'idle'
+  // const canSave = Boolean(name) && addRequestStatus === 'idle'
 
   const handleAddNewSequence = () => {
-    console.log(initial)
-    if (canSave) {
+      console.log(initial)
       try {
         setAddRequestStatus('Pending')
         dispatch(addNewSequence(initial)).unwrap()
@@ -60,7 +59,6 @@ const AddSequenceForm = () => {
       } finally {
         setAddRequestStatus('idle')
       }
-    }
   }
 
 

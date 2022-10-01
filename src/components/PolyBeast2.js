@@ -3,14 +3,14 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Song, Track, Instrument, Effect } from 'reactronica';
 import PolyBeast2Step from './PolyBeast2Step'
 import UnderGrid from './UnderGrid'
-import { selectCurrentSequence, removeStep, addStep } from '../features/currentSequence/currentSequenceSlice'
+import { selectCurrentSequence, removeStep2, addStep2 } from '../features/currentSequence/currentSequenceSlice'
 
 const PolyBeast2 = () => {
   const dispatch = useDispatch()
   const currentSequence = useSelector(selectCurrentSequence)
 
 
-  const [note, setNote] = useState('C#3')
+  const [note, setNote] = useState('D#4')
   const [disableRemove, setDisableRemove] = useState(false)
   const [disableAdd, setDisableAdd] = useState(false)
   const [playHead, setPlayHead] = useState(1)
@@ -31,7 +31,7 @@ const PolyBeast2 = () => {
   //    ADD REMOVE STEPS AND DISABLE BUTTONS
   //-------------------------------------------
   const handleAddStep = () => {
-    dispatch(addStep())
+    dispatch(addStep2())
     console.log(currentSequence)
     if (currentSequence.poly2Steps.length === 15) {
       setDisableAdd(true)
@@ -41,7 +41,7 @@ const PolyBeast2 = () => {
     }
   }
   const handleRemoveStep = () => {
-    dispatch(removeStep())
+    dispatch(removeStep2())
     console.log(currentSequence)
     if (currentSequence.poly2Steps.length < 17) {
       setDisableAdd(false)
@@ -78,7 +78,6 @@ const PolyBeast2 = () => {
       {currentSequence.poly2Steps.map((step, index) => {
         return (
           <>
-          <UnderGrid />
           <PolyBeast2Step
             currentSequence={currentSequence}
             index={index}
