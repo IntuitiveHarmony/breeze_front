@@ -16,6 +16,7 @@ import MonoSynth from './components/MonoSynth'
 import MonoSynth2 from './components/MonoSynth2'
 import PolyBeast0 from './components/PolyBeast0'
 import PolyBeast1 from './components/PolyBeast1'
+import PolyBeast2 from './components/PolyBeast2'
 import SampleKick from './components/SampleKick'
 import Login from './components/Login'
 import Navbar from './components/Navbar';
@@ -118,16 +119,19 @@ function App() {
 
   return (
       <>
+
         <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser} />
         <h1 className="beats-title">polybeast</h1>
         <div className='beast-container'>
         <h3 className='seq-name'>{sequenceName}</h3>
+
         <div className='crud-container'>
           <AddSequenceForm/>
           <SequencesList />
           <EditSequenceForm />
           <DeleteSequenceForm />
         </div>
+
 
         <div className='synth-ctrl'>
           {isPlaying ? <button className="stop-btn" onClick={() => play()}>Stop</button> : <button className="main-play-btn" onClick={() => play()}>Play</button> }
@@ -139,8 +143,7 @@ function App() {
         
         <div>
           <Song isPlaying={isPlaying} volume={volume} bpm={bpm}>
-          {/*  <MonoSynth />
-            <MonoSynth2 /> */}
+            <div className="song-container"><PolyBeast2 /></div>
             <div className="song-container"><PolyBeast1 /></div>
             <div className="song-container"><PolyBeast0 /></div>
               <div className="spacer"></div>
@@ -148,7 +151,7 @@ function App() {
         </div>
         </div>
 
-        
+
         <h1 className="beats-title">polyBeats</h1>
         <Provider>
           <div className='beats-container'>
