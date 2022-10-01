@@ -10,7 +10,6 @@ import * as Tone from 'tone'
 import SequencesList from './features/sequences/SequencesList'
 import AddSequenceForm from './features/sequences/AddSequenceForm'
 import EditSequenceForm from './features/currentSequence/EditSequence'
-import Drumkit from './components/Drumkit';
 import Synth from './components/Synth'
 import MonoSynth from './components/MonoSynth'
 import MonoSynth2 from './components/MonoSynth2'
@@ -25,7 +24,6 @@ import useStyles from './components/hooks/useStyles';
 import useTimer from './components/hooks/useTimer';
 import TrackList from './components/808/TrackList';
 import useStore from './components/hooks/useStore'
-import PlayHead from './components/808/PlayHead';
 import {Provider} from './components/hooks/useStore'
 import ToolBar from './components/808/Toolbar';
 import Steps from './components/808/Steps';

@@ -11,11 +11,6 @@
 .step-drum {
     display: flex;
     flex: 0 0 var(--note-width);
-    /* min-width: var(--note-width); */
-    /* min-height: var(--step-height); */
-    /* margin-left: var(--note-margin-horz); */
-    /* margin-right: var(--note-margin-horz); */
-    /* justify-content: center; */
     align-items: center;
     font-weight: 800;
     font-size: 1rem;

@@ -37,6 +37,7 @@
 9/25/22  
 -researching and experimenting with redux, can finally add things to the store.  Redux is starting to make more sense
 -Established full CRUD
+- finally got drum sounds to work with Context, thanks to github.io/joeshub, watched video on how to make tracks within a provider.
 
 9/26/22  
 -experimenting with CRUD and the store, figuring out how the data will look and flow
@@ -46,6 +47,7 @@
 
 9/28/22  
 -fixing CRUD after server update
+-couldn't get samples to play through urls
 
 9/29/22  
 -update server to reflect users.  ran into issues with bcrypt
