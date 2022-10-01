@@ -1,18 +1,25 @@
 {
   "files": {
-    "main.css": "/breeze_front/static/css/main.8c9c51b7.css",
-    "main.js": "/breeze_front/static/js/main.d65b2399.js",
+    "main.css": "/breeze_front/static/css/main.cf70e185.css",
+    "main.js": "/breeze_front/static/js/main.d23354c2.js",
     "static/js/787.a230297f.chunk.js": "/breeze_front/static/js/787.a230297f.chunk.js",
+    "static/media/batmanloop1.wav": "/breeze_front/static/media/batmanloop1.2ddb754ee92ca680e0b9.wav",
+    "static/media/batmanloop2.wav": "/breeze_front/static/media/batmanloop2.9062bea287272579214e.wav",
+    "static/media/batmanpad160bpm.wav": "/breeze_front/static/media/batmanpad160bpm.54563d5353b0ccaaff9e.wav",
+    "static/media/batmanstring160bpm.wav": "/breeze_front/static/media/batmanstring160bpm.957f702759c91e6d246c.wav",
+    "static/media/triangle.mp3": "/breeze_front/static/media/triangle.c9a76b311982c160962d.mp3",
     "static/media/kick10.mp3": "/breeze_front/static/media/kick10.b7d456f0bb453e931bcb.mp3",
     "static/media/closedhat1.mp3": "/breeze_front/static/media/closedhat1.f7a6ab1cdbe5307e99f2.mp3",
+    "static/media/openhat1.mp3": "/breeze_front/static/media/openhat1.6131b13cac9c182f132f.mp3",
     "static/media/snare1.mp3": "/breeze_front/static/media/snare1.36736b8c379936cf6b33.mp3",
+    "static/media/kick2.wav": "/breeze_front/static/media/kick2.199d6d0479752ed15d41.wav",
     "index.html": "/breeze_front/index.html",
-    "main.8c9c51b7.css.map": "/breeze_front/static/css/main.8c9c51b7.css.map",
-    "main.d65b2399.js.map": "/breeze_front/static/js/main.d65b2399.js.map",
+    "main.cf70e185.css.map": "/breeze_front/static/css/main.cf70e185.css.map",
+    "main.d23354c2.js.map": "/breeze_front/static/js/main.d23354c2.js.map",
     "787.a230297f.chunk.js.map": "/breeze_front/static/js/787.a230297f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8c9c51b7.css",
-    "static/js/main.d65b2399.js"
+    "static/css/main.cf70e185.css",
+    "static/js/main.d23354c2.js"
   ]
 }
