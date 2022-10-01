@@ -1,8 +1,10 @@
 import { createSlice, nanoid, createAsyncThunk } from '@reduxjs/toolkit'
 import { updateSequence } from '../currentSequence/currentSequenceSlice'
+import { useSelector } from 'react-redux'
 import axios from 'axios'
 
 const SEQUENCES_URL = 'https://breeze-back.herokuapp.com/api/sequences'
+
 
 const initialState = {
   sequences: [],
@@ -27,6 +29,7 @@ export const fetchSequences = createAsyncThunk('sequences/fetchSequences', async
 //     ADD NEW SEQUENCE TO OUR DATA BASE
 //-----------------------------------------------
 export const addNewSequence = createAsyncThunk('sequences/addNewSequence', async (initialSequence) => {
+  console.log(initialSequence)
   try {
     const response = await axios.post(SEQUENCES_URL, initialSequence)
     return response.data
@@ -44,10 +47,11 @@ export const deleteSequence = createAsyncThunk('currentSequence/deletedSequence'
     return response.data
   } catch (err) {
     return err.message
-  } 
+  }
 })
 
 const sequencesSlice = createSlice({
+
   name: 'sequences',
   initialState,
   reducers: {
@@ -84,9 +88,11 @@ const sequencesSlice = createSlice({
         state.sequences.push(action.payload)
       })
       .addCase(updateSequence.fulfilled, (state, action) => {
-        state.sequences = [...action.payload]
-      } )
-
+        state.sequences = [...state.sequences, action.payload]
+      })
+      .addCase(deleteSequence.fulfilled, (state, action) => {
+        state.sequences.pop(action.payload)
+      })
   }
 })
 

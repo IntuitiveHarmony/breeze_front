@@ -1,0 +1,21 @@
+.steps-drums {
+    display: flex;
+    padding-left: 9em;
+    border-top: 1px solid darkgray;
+    border-bottom: 1px solid darkgrey;
+    font-family: 'Inter Tight', sans-serif;
+    margin-top: 1em;
+
+}
+
+.step-drum {
+    display: flex;
+    flex: 0 0 var(--note-width);
+    align-items: center;
+    font-weight: 800;
+    font-size: 1rem;
+    font-family: 'Inter Tight', sans-serif;
+    justify-content: space-between;
+    margin: 0.26em;
+
+}

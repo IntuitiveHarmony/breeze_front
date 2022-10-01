@@ -19,7 +19,7 @@ const Navbar = (props) => {
   return (
     <div className='navbar'>
         <div className='logo'>
-        {/* <img src='/wastd-logo.png' height='40'/> */}
+        <img src={process.env.PUBLIC_URL + '/polybeast1.png'} height='40' alt='polybeast-nav'/>
         </div>
         <div className='icons'>
         {props.currentUser.email ?
