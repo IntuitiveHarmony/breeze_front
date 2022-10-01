@@ -49,7 +49,6 @@ const AddSequenceForm = () => {
     setInitial({...initial, [e.target.name]: Number(e.target.value)})
   }
 
-  // const canSave = Boolean(name) && addRequestStatus === 'idle'
 
   const handleAddNewSequence = () => {
       console.log(initial)
@@ -64,7 +63,6 @@ const AddSequenceForm = () => {
       } finally {
         setAddRequestStatus('idle')
       }
-      dispatch(loadCurrentSequence(initial))
   }
 
 

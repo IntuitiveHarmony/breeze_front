@@ -12,10 +12,7 @@ import axios from 'axios'
 const SEQUENCES_URL = 'https://breeze-back.herokuapp.com/api/sequences'
 
 
-const initialState = {
-
-
-}
+const initialState = {}
 
 // const Context = createContext({
 //   drumSequence: {},
@@ -83,7 +80,7 @@ const currentSequenceSlice = createSlice({
     },
     addStep: {
       reducer(state, action) {
-        state.currentSequence.poly0Steps.push(null)
+        state.currentSequence.poly0Steps.push('null')
       }
     },
     removeStep1: {
@@ -114,6 +111,6 @@ const currentSequenceSlice = createSlice({
 export const selectCurrentSequence = (state) => state.currentSequence.currentSequence
 // this will put the current state in the store
 
-export const { loadCurrentSequence, changeTempo, changeName, updateStep, updateStep1, updateStep2,   addStep, addStep1, addStep2,removeStep, removeStep1, removeStep2 } = currentSequenceSlice.actions
+export const { loadCurrentSequence, changeTempo, changeName, updateStep, updateStep1, updateStep2, addStep, addStep1, addStep2, removeStep, removeStep1, removeStep2 } = currentSequenceSlice.actions
 
 export default currentSequenceSlice.reducer
