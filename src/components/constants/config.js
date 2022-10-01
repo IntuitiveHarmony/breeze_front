@@ -175,31 +175,5 @@ const soundFiles = {
     'batmanpad': require('./batmanpad160bpm.wav')
 }
 
-const soundFilesArray = [
-    {
-    id: 0,
-    'kick': require('./kick10.mp3'),
-    'kick2': require('./kick2.wav'),
-    },
-    {
-    'snare': require('./snare1.mp3'),
-    'triangle': require('./triangle.mp3'),
-    'hh_closed': require('./closedhat1.mp3'),
-    'hh_open': require('./openhat1.mp3'),
-    'batmanloop1': require('./batmanloop1.wav'),
-    'bat_strings': require('./batmanstring160bpm.wav'),
-    'batmanloop2': require('./batmanloop2.wav'),
-    'batmanpad': require('./batmanpad160bpm.wav')
-}
-]
 
-
-// const soundPlay = () => {
-//     const sound = new Howl ({
-//         src,
-//         html5: true
-//     })
-//     sound.play()
-// }
-
-export { sequenceList, soundFiles, soundFilesArray }
+export { sequenceList, soundFiles }
