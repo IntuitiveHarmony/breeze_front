@@ -20,7 +20,6 @@ import PolyBeast2 from './components/PolyBeast2'
 import SampleKick from './components/SampleKick'
 import Login from './components/Login'
 import Navbar from './components/Navbar';
-import Kick from './components/Kick';
 import DeleteSequenceForm from './features/sequences/DeleteSequenceForm';
 import useStyles from './components/hooks/useStyles';
 import useTimer from './components/hooks/useTimer';
@@ -120,10 +119,11 @@ function App() {
 
   return (
       <>
-        <h1>polybeast</h1>
-        <h3>{sequenceName}</h3>
 
         <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser} />
+        <h1 className="beats-title">polybeast</h1>
+        <div className='beast-container'>
+        <h3 className='seq-name'>{sequenceName}</h3>
 
         <div className='crud-container'>
           <AddSequenceForm/>
@@ -131,32 +131,33 @@ function App() {
           <EditSequenceForm />
           <DeleteSequenceForm />
         </div>
-        <Synth />
-        <hr/>
-        <Song isPlaying={isPlaying} volume={volume} bpm={bpm}>
 
 
-          <PolyBeast2 />
-          <PolyBeast1 />
-          <PolyBeast0 />
+        <div className='synth-ctrl'>
+          {isPlaying ? <button className="stop-btn" onClick={() => play()}>Stop</button> : <button className="main-play-btn" onClick={() => play()}>Play</button> }
+          <label>Main volume</label>
+          <input onChange={handleVolume} type='range' step='1' min='-100' max='0' ></input>
+          <label>Tempo: {bpm} bpm</label>
+          <input onChange={handleTempo} type='range' step='1' min='10' max='700' ></input>
+        </div>
+        
+        <div>
+          <Song isPlaying={isPlaying} volume={volume} bpm={bpm}>
+            <div className="song-container"><PolyBeast2 /></div>
+            <div className="song-container"><PolyBeast1 /></div>
+            <div className="song-container"><PolyBeast0 /></div>
+              <div className="spacer"></div>
+          </Song><br/>
+        </div>
+        </div>
 
-        </Song><br/>
-        <hr/>
-
-
-        {isPlaying ? <button onClick={() => play()}>Stop</button> : <button onClick={() => play()}>Play</button> }
-        <label>Main volume</label>
-        <input onChange={handleVolume} type='range' step='1' min='-100' max='0' ></input>
-        <label>Tempo: {bpm} bpm</label>
-        <input onChange={handleTempo} type='range' step='1' min='10' max='700' ></input>
-        <hr />
 
         <h1 className="beats-title">polyBeats</h1>
         <Provider>
-        <div>
-        <main className="app">
-                <div className="app_header">
-                    <ToolBar {...toolBarProps} />
+          <div className='beats-container'>
+            <main className="app">
+              <div className="app_header">
+                  <ToolBar {...toolBarProps} />
                 </div>
                 <Steps count={totalSteps} />
                 <div className="app_content">

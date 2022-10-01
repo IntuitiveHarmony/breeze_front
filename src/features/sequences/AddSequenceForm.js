@@ -69,8 +69,8 @@ const AddSequenceForm = () => {
     return (
       <>
         <div>
-          <details>
-            <summary>Create New Sequence</summary>
+          <details className="seq-container">
+            <summary className="create-seq">Create New Sequence</summary>
               <form>
                 <label htmlFor='sequenceName'>Sequence Name: </label>
                 <input

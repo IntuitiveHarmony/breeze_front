@@ -6,13 +6,13 @@ const sequenceList = [
         trackList: [
             {
                 title: 'Kick',
-                soundFile: 'kick1',
-                onNotes: [0, 2, 4, 6, 8, 10, 12],
+                soundFile: 'kick',
+                onNotes: [0, 3, 10 ],
             },
             {
                 title: 'Snare',
                 soundFile: 'snare',
-                onNotes: [2, 4, 10, 12, 15],
+                onNotes: [4, 7, 9, 12, 15],
             },
             {
                 title: 'Open Hat',
@@ -22,8 +22,14 @@ const sequenceList = [
             {
                 title: 'Closed Hat',
                 soundFile: 'hh_closed',
-                onNotes: [0, 4, 5, 6, 7, 12, 14],
-            }
+                onNotes: [2, 4, 6, 8, 10, 12, 14],
+            },
+            {
+                title: 'Triangle',
+                soundFile: 'triangle',
+                onNotes: [7],
+            },
+            
         ]
     },
     {
@@ -106,20 +112,73 @@ const sequenceList = [
                 onNotes: [],
             }
         ]
-    }
+    },
+    {
+        id: 4,
+        title: 'Batman Loop 1',
+        noteCount: 16,
+        trackList: [
+            {
+                title: 'Kick',
+                soundFile: 'kick',
+                onNotes: [],
+            },
+            {
+                title: 'Snare',
+                soundFile: 'snare',
+                onNotes: [],
+            },
+            {
+                title: 'Open Hat',
+                soundFile: 'hh_open',
+                onNotes: [],
+            },
+            {
+                title: 'Closed Hat',
+                soundFile: 'hh_closed',
+                onNotes: [],
+            },
+            {
+                title: 'bat strings',
+                soundFile: 'bat_strings',
+                onNotes: [],
+            },
+            {
+                title: 'bat pad',
+                soundFile: 'batmanpad',
+                onNotes: [],
+            },
+            {
+                title: 'batman loop 1',
+                soundFile: 'batmanloop1',
+                onNotes: [],
+            },
+            {
+                title: 'batman loop 2',
+                soundFile: 'batmanloop2',
+                onNotes: [],
+            },
+        ]
+    },
 ]
 
 const soundFiles = {
-    'kick': require('./kick10.wav'),
-    'snare': require('./snare1.wav'),
-    'hh_open': '/sounds/hh_open.wav',
+    'kick': require('./kick10.mp3'),
+    'kick2': require('./kick2.wav'),
+    'snare': require('./snare1.mp3'),
+    'triangle': require('./triangle.mp3'),
     'hh_closed': require('./closedhat1.mp3'),
-    'kick1' : require('https://github.com/IntuitiveHarmony/breeze_front/blob/jey2/src/components/constants/kick10.wav')
-
+    'hh_open': require('./openhat1.mp3'),
+    'batmanloop1': require('./batmanloop1.wav'),
+    'bat_strings': require('./batmanstring160bpm.wav'),
+    'batmanloop2': require('./batmanloop2.wav'),
+    'batmanpad': require('./batmanpad160bpm.wav')
 }
 
 const kickFiles = [
-    {sound: "https://github.com/IntuitiveHarmony/breeze_front/blob/jey2/src/components/constants/kick10.wav", label: 'Kick1'}
+    {
+        sound: new Audio("https://github.com/IntuitiveHarmony/breeze_front/blob/jey2/src/components/constants/kick10.wav")
+    }
 ]
 
 // const soundPlay = () => {
