@@ -175,11 +175,6 @@ const soundFiles = {
     'batmanpad': require('./batmanpad160bpm.wav')
 }
 
-const kickFiles = [
-    {
-        sound: new Audio("https://github.com/IntuitiveHarmony/breeze_front/blob/jey2/src/components/constants/kick10.wav")
-    }
-]
 
 // const soundPlay = () => {
 //     const sound = new Howl ({
