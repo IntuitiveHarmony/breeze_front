@@ -19,6 +19,16 @@ const PolyBeast0 = () => {
 
   const [steps, setSteps] = useState([])
 
+  // if (currentSequence != undefined) {
+  //   const steps2 = currentSequence.steps.map((step) => {
+  //     if (step === 'null') {
+  //       step = null
+  //       steps2.push(step)
+  //     } else {
+  //       steps2.push(step)
+  //     }
+  //   })
+  // }
 
   const handleDelayFeedback = (e) => {
     setDelayWet(e.target.value)
@@ -58,7 +68,7 @@ const PolyBeast0 = () => {
   return (
     <>
     {currentSequence ? <>
-      <Track steps={currentSequence.poly0Steps} volume={monoVolume} onStepPlay={(step, index) => {
+      <Track steps={steps} volume={monoVolume} onStepPlay={(step, index) => {
           setPlayHead(index)
           console.log(step, index);
         }}>
