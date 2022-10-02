@@ -127,7 +127,7 @@ function App() {
         
         <div className="top-container">
             <h1 className="beats-title">polybeast</h1>
-            <button onClick={() => setShowPianoRoll(!showPianoRoll)}>Piano Roll</button>
+            <button className='piano-btn' onClick={() => setShowPianoRoll(!showPianoRoll)}>Piano Roll</button>
         </div>
         <div className='beast-container'>
             <h3 className='seq-name'>{sequenceName}</h3>
@@ -159,8 +159,9 @@ function App() {
         <div>
           <PianoRoll />
           <Piano2 /></div>  : null }
-
+        <div className='top-container'>
         <h1 className="beats-title">polyBeats</h1>
+        </div>
         <Provider>
           <div className='beats-container'>
             <main className="app">

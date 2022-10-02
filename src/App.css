@@ -35,6 +35,15 @@ details {
   overflow: scroll;
 }
 
+.piano-btn {
+  background-color: transparent;
+  border: white 2px solid;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.4em;
+  font-family: 'Lato', sans-serif;
+}
 
 /* ////////////
     SYNTH GRID

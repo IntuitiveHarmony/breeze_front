@@ -35,7 +35,7 @@ const PianoRoll = () => {
     <div className='piano-container'>
         <h2>Play Along!</h2>
         <br />
-        {/* <button onClick={playGong}>Play Gong</button> */}
+        <button onClick={playGong}>Play Gong</button>
         <div className="piano-roll">
         <div className="white-key" onClick={playC4}>A</div>
         <div className="black-key" onClick={playDb4}>W</div>
