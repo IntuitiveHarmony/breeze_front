@@ -62,11 +62,17 @@
 -time for a piano roll
 
 To do: 
-1. make a ternary for the drums? Make a key stroke drumpad with ternary in nav bar, and piano roll a ternary
+1. make a ternary for piano roll
 
 2. make the beatPerSequence in app.js an array 
-  [2, 4, 6, 8]. Make that array a <select> div in the jsx. So the steps will populate.
+  [2, 4, 6, 8]. Make that array a <select> div in the jsx. So the steps will populate. 
 
+3. If polysynth doesn't work, download piano sample, which I did already but it sucks (check my library on FL tomorrow), and use the Tone.player to simulate each note for either a piano roll or the actual polysynth using:
+  const function = () => {
+    const player = new Tone.Player("path).toDestination();
+    player.autostart = true;
+  }
+  -- already tested and it works
 
 
 
