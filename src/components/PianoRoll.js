@@ -21,6 +21,7 @@ window.addEventListener("keydown", playNote);
 
 
 const PianoRoll = () => {
+
     const playGong = () => {
     const player = new Tone.Player("https://tonejs.github.io/audio/berklee/gong_1.mp3").toDestination();
 // play as soon as the buffer is loaded
@@ -31,8 +32,10 @@ const PianoRoll = () => {
     
 
   return (
-    <div>
-        <button onClick={playGong}>Play Gong</button>
+    <div className='piano-container'>
+        <h2>Play Along!</h2>
+        <br />
+        {/* <button onClick={playGong}>Play Gong</button> */}
         <div className="piano-roll">
         <div className="white-key" onClick={playC4}>A</div>
         <div className="black-key" onClick={playDb4}>W</div>

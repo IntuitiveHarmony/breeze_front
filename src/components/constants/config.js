@@ -6,7 +6,7 @@ const sequenceList = [
         trackList: [
             {
                 title: 'Kick',
-                soundFile: 'kick',
+                soundFile: 'kick2',
                 onNotes: [0, 3, 10, 17 ],
             },
             {
@@ -115,7 +115,7 @@ const sequenceList = [
     },
     {
         id: 4,
-        title: 'Batman Loop 1 - 32 Bars',
+        title: 'Batman Loop - 32 Bars - 160BPM',
         noteCount: 32,
         trackList: [
             {
@@ -160,6 +160,58 @@ const sequenceList = [
             },
         ]
     },
+    {
+        id: 5,
+        title: 'Club Kit - 32Bars - 140BPM',
+        noteCount: 32,
+        trackList: [
+            {
+                title: 'Lex Kick',
+                soundFile: 'lexkick',
+                onNotes: [0, 3, 6, 8, 16, 19,],
+            },
+            {
+                title: 'lex clap',
+                soundFile: 'lexclap',
+                onNotes: [4, 12, 20, 28 ],
+            },
+            {
+                title: 'lex hat',
+                soundFile: 'lexhat',
+                onNotes: [0, 2, 3 , 4, 6, 8, 10, 11, 12, 14, 16, 18, 19, 20, 22, 24, 26, 27, 28, 30, 31, 32 ],
+            },
+            {
+                title: 'pb clubpad',
+                soundFile: 'clubpad',
+                onNotes: [0],
+            },
+            {
+                title: 'pb clubpad2',
+                soundFile: 'clubpad',
+                onNotes: [16],
+            },
+            {
+                title: 'pb club clip',
+                soundFile: 'clubclip',
+                onNotes: [],
+            },
+            {
+                title: 'pb voc full',
+                soundFile: 'pbvocalsamp',
+                onNotes: [0],
+            },
+            {
+                title: 'pb voc 1',
+                soundFile: 'pbvocal1',
+                onNotes: [],
+            },
+            {
+                title: 'pb voc 2',
+                soundFile: 'pbvocal2',
+                onNotes: [],
+            },
+        ]
+    },
 ]
 
 const soundFiles = {
@@ -172,7 +224,15 @@ const soundFiles = {
     'batmanloop1': require('./batmanloop1.wav'),
     'bat_strings': require('./batmanstring160bpm.wav'),
     'batmanloop2': require('./batmanloop2.wav'),
-    'batmanpad': require('./batmanpad160bpm.wav')
+    'batmanpad': require('./batmanpad160bpm.wav'),
+    'lexkick': require('./lexkick.wav'),
+    'lexclap': require('./lexclap.wav'),
+    'lexhat': require('./lexhat.wav'),
+    'clubpad': require('./clubpad140.wav'),
+    'clubclip': require('./clubclip1.wav'),
+    'pbvocalsamp': require('./pbvocalsamp.wav'),
+    'pbvocal1': require('./pbvocal1.wav'),
+    'pbvocal2': require('./pbvocal2.wav'),
 }
 
 // const soundFilesArray = [
