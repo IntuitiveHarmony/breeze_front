@@ -27,6 +27,9 @@ import useStore from './components/hooks/useStore'
 import {Provider} from './components/hooks/useStore'
 import ToolBar from './components/808/Toolbar';
 import Steps from './components/808/Steps';
+import PianoRoll from './components/PianoRoll';
+import Piano2 from './components/Piano2';
+import _ from 'lodash';
 
 
 
@@ -39,6 +42,7 @@ function App() {
   // const [tempo, setTempo] = useState(40)
   const [volume, setVolume] = useState()
   const [currentUser, setCurrentUser] = useState({})
+  const [showPianoRoll, setShowPianoRoll] = useState(false);
 
 
   const handleVolume = (e) => {
@@ -69,7 +73,7 @@ function App() {
   const baseBPMPerOneSecond = 60
     const stepsPerBar = 8
     const beatsPerBar = 4
-    const barsPerSequence = 2
+    const barsPerSequence = 4 
     const totalSteps = stepsPerBar * barsPerSequence
     const totalBeats = beatsPerBar * barsPerSequence
 
@@ -119,46 +123,53 @@ function App() {
       <>
 
         <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser} />
-        <h1 className="beats-title">polybeast</h1>
-        <div className='beast-container'>
-        <h3 className='seq-name'>{sequenceName}</h3>
 
-        <div className='crud-container'>
-          <AddSequenceForm/>
-          <SequencesList />
-          <EditSequenceForm />
-          <DeleteSequenceForm />
+        
+        <div className="top-container">
+            <h1 className="beats-title">polybeast</h1>
+            <button className='piano-btn' onClick={() => setShowPianoRoll(!showPianoRoll)}>Piano Roll</button>
         </div>
-
-
-        <div className='synth-ctrl'>
-          {isPlaying ? <button className="stop-btn" onClick={() => play()}>Stop</button> : <button className="main-play-btn" onClick={() => play()}>Play</button> }
-          <label>Main volume</label>
-          <input onChange={handleVolume} type='range' step='1' min='-100' max='0' ></input>
-          <label>Tempo: {bpm} bpm</label>
-          <input onChange={handleTempo} type='range' step='1' min='10' max='700' ></input>
+        <div className='beast-container'>
+            <h3 className='seq-name'>{sequenceName}</h3>
+            <div className='crud-container'>
+              <AddSequenceForm/>
+              <SequencesList />
+              <EditSequenceForm />
+              <DeleteSequenceForm />
+            </div>
+          <div className='synth-ctrl'>
+            {isPlaying ? <button className="stop-btn" onClick={() => play()}>Stop</button> : <button className="main-play-btn" onClick={() => play()}>Play</button> }
+            <label>Main volume</label>
+            <input onChange={handleVolume} type='range' step='1' min='-100' max='0' ></input>
+            <label>Tempo: {bpm} bpm</label>
+            <input onChange={handleTempo} type='range' step='1' min='10' max='700' ></input>
+          </div>
+        
+          <div>
+            <Song isPlaying={isPlaying} volume={volume} bpm={bpm}>
+              <div className="song-container"><PolyBeast2 /></div>
+              <div className="song-container"><PolyBeast1 /></div>
+              <div className="song-container"><PolyBeast0 /></div>
+                <div className="spacer"></div>
+            </Song><br/>
+          </div>
         </div>
         
+        {showPianoRoll ?
         <div>
-          <Song isPlaying={isPlaying} volume={volume} bpm={bpm}>
-            <div className="song-container"><PolyBeast2 /></div>
-            <div className="song-container"><PolyBeast1 /></div>
-            <div className="song-container"><PolyBeast0 /></div>
-              <div className="spacer"></div>
-          </Song><br/>
-        </div>
-        </div>
-
-
+          <PianoRoll />
+          <Piano2 /></div>  : null }
+        <div className='top-container'>
         <h1 className="beats-title">polyBeats</h1>
+        </div>
         <Provider>
           <div className='beats-container'>
             <main className="app">
-              <div className="app_header">
-                  <ToolBar {...toolBarProps} />
+                <div className="tool-container">
+                    <ToolBar {...toolBarProps} />
                 </div>
                 <Steps count={totalSteps} />
-                <div className="app_content">
+                <div className="track-container">
                     <TrackList {...trackListProps} />
                 </div>
                 <footer className="app_footer">

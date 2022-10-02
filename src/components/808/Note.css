@@ -1,3 +1,12 @@
+.note-container {
+    border-left: 1px white solid;
+    width: 70%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    
+}
+
 .note {
     flex: 0 0 var(--note-width);
     height: var(--note-height);
