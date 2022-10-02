@@ -1,13 +1,13 @@
 const sequenceList = [
     {
         id: 0,
-        title: 'Sequence 1',
+        title: 'Sequence 1 - 16 Bars',
         noteCount: 16,
         trackList: [
             {
                 title: 'Kick',
                 soundFile: 'kick',
-                onNotes: [0, 3, 10 ],
+                onNotes: [0, 3, 10, 17 ],
             },
             {
                 title: 'Snare',
@@ -34,7 +34,7 @@ const sequenceList = [
     },
     {
         id: 1,
-        title: 'Sequence 2',
+        title: 'Sequence 2 - 16 Bars',
         noteCount: 16,
         trackList: [
             {
@@ -61,8 +61,8 @@ const sequenceList = [
     },
     {
         id: 2,
-        title: 'Sequence 3',
-        noteCount: 16,
+        title: 'Sequence 3 - 32 Bars',
+        noteCount: 32,
         trackList: [
             {
                 title: 'Kick',
@@ -88,13 +88,13 @@ const sequenceList = [
     },
     {
         id: 3,
-        title: 'Sequence 4',
-        noteCount: 16,
+        title: 'Sequence 4 - 64 Bars',
+        noteCount: 64,
         trackList: [
             {
                 title: 'Kick',
                 soundFile: 'kick',
-                onNotes: [0, 4, 8, 12],
+                onNotes: [0, 4, 8, 12, 20],
             },
             {
                 title: 'Snare',
@@ -115,8 +115,8 @@ const sequenceList = [
     },
     {
         id: 4,
-        title: 'Batman Loop 1',
-        noteCount: 16,
+        title: 'Batman Loop 1 - 32 Bars',
+        noteCount: 32,
         trackList: [
             {
                 title: 'Kick',
@@ -146,7 +146,7 @@ const sequenceList = [
             {
                 title: 'bat pad',
                 soundFile: 'batmanpad',
-                onNotes: [],
+                onNotes: [0],
             },
             {
                 title: 'batman loop 1',
@@ -175,23 +175,23 @@ const soundFiles = {
     'batmanpad': require('./batmanpad160bpm.wav')
 }
 
-const soundFilesArray = [
-    {
-    id: 0,
-    'kick': require('./kick10.mp3'),
-    'kick2': require('./kick2.wav'),
-    },
-    {
-    'snare': require('./snare1.mp3'),
-    'triangle': require('./triangle.mp3'),
-    'hh_closed': require('./closedhat1.mp3'),
-    'hh_open': require('./openhat1.mp3'),
-    'batmanloop1': require('./batmanloop1.wav'),
-    'bat_strings': require('./batmanstring160bpm.wav'),
-    'batmanloop2': require('./batmanloop2.wav'),
-    'batmanpad': require('./batmanpad160bpm.wav')
-}
-]
+// const soundFilesArray = [
+//     {
+//     id: 0,
+//     'kick': require('./kick10.mp3'),
+//     'kick2': require('./kick2.wav'),
+//     },
+//     {
+//     'snare': require('./snare1.mp3'),
+//     'triangle': require('./triangle.mp3'),
+//     'hh_closed': require('./closedhat1.mp3'),
+//     'hh_open': require('./openhat1.mp3'),
+//     'batmanloop1': require('./batmanloop1.wav'),
+//     'bat_strings': require('./batmanstring160bpm.wav'),
+//     'batmanloop2': require('./batmanloop2.wav'),
+//     'batmanpad': require('./batmanpad160bpm.wav')
+// }
+// ]
 
 
 // const soundPlay = () => {
@@ -202,4 +202,4 @@ const soundFilesArray = [
 //     sound.play()
 // }
 
-export { sequenceList, soundFiles, soundFilesArray }
+export { sequenceList, soundFiles }

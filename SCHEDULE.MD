@@ -59,7 +59,13 @@
 10/1/22  
 -Polishing CRUD functions
 -CSS
+-time for a piano roll
 
+To do: 
+1. make a ternary for the drums? Make a key stroke drumpad with ternary in nav bar, and piano roll a ternary
+
+2. make the beatPerSequence in app.js an array 
+  [2, 4, 6, 8]. Make that array a <select> div in the jsx. So the steps will populate.
 
 
 

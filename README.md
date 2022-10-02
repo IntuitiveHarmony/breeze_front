@@ -2,7 +2,7 @@
 
 [Live Site](https://intuitiveharmony.github.io/breeze_front/) | [Front End Repo](https://github.com/IntuitiveHarmony/breeze_front) | [API](https://breeze-back.herokuapp.com/api/sequences) | [Back End Repo](https://github.com/IntuitiveHarmony/breeze_back) |
 
-This instrument is a collaboration between Jey Ulmer and Jason Horst.  We set out to make a poly rhythmic sequencer and sample based drum machine in which the user is able to create, save, edit and delete new sequences.  Breeze was built using React, Redux, Django, Postgresql, Reactronica, and Tone.js.  The back end is hosted using Heroku and the front end is deployed using Github pages.
+This instrument is a collaboration between Jey Ulmer and Jason Horst.  We set out to make a poly rhythmic sequencer and sample based drum machine in which the user is able to create, save, edit and delete new sequences.  Breeze was built using React, Redux, Django, Postgresql, Reactronica, and Tone.js.  The back end is hosted using Heroku and the front end is deployed using Github pages. Piano Roll keys, as well as any key code can be found here javascriptkeycode.com.
 
 
 ## Challenges

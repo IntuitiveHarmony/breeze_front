@@ -27,6 +27,9 @@ import useStore from './components/hooks/useStore'
 import {Provider} from './components/hooks/useStore'
 import ToolBar from './components/808/Toolbar';
 import Steps from './components/808/Steps';
+import PianoRoll from './components/PianoRoll';
+import Piano2 from './components/Piano2';
+import _ from 'lodash';
 
 
 
@@ -119,6 +122,9 @@ function App() {
       <>
 
         <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser} />
+
+        
+
         <h1 className="beats-title">polybeast</h1>
         <div className='beast-container'>
         <h3 className='seq-name'>{sequenceName}</h3>
@@ -149,16 +155,18 @@ function App() {
         </div>
         </div>
 
+        <PianoRoll />
+        <Piano2 />
 
         <h1 className="beats-title">polyBeats</h1>
         <Provider>
           <div className='beats-container'>
             <main className="app">
-              <div className="app_header">
-                  <ToolBar {...toolBarProps} />
+                <div className="tool-container">
+                    <ToolBar {...toolBarProps} />
                 </div>
                 <Steps count={totalSteps} />
-                <div className="app_content">
+                <div className="track-container">
                     <TrackList {...trackListProps} />
                 </div>
                 <footer className="app_footer">
