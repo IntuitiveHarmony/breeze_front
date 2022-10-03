@@ -59,8 +59,17 @@
 10/1/22  
 -Polishing CRUD functions
 -CSS
+-time for a piano roll
 
+To do: 
+1. make a ternary for piano roll
 
+2. If polysynth doesn't work, download piano sample, which I did already but it sucks (check my library on FL tomorrow), and use the Tone.player to simulate each note for either a piano roll or the actual polysynth using:
+  const function = () => {
+    const player = new Tone.Player("path).toDestination();
+    player.autostart = true;
+  }
+  -- already tested and it works
 
 
 

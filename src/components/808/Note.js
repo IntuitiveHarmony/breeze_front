@@ -31,10 +31,11 @@ const Note = ({
     }
 
     return (
+        <div className="note-container">
         <div
             className={noteClassNames}
             onClick={noteClicked}
-        />
+        /></div>
     )
 }
 
