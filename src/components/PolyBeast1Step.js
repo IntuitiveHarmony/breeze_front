@@ -9,23 +9,19 @@ const PolyBeast1Step = (props) => {
   const currentSequence = useSelector(selectCurrentSequence)
   const [active, setActive] = useState(false)
   const [noteIndex, setNoteIndex] = useState([props.index, props.note])
-  const [noteNull, setNoteNull] = useState([props.index, 'null'])
+  const [noteNull, setNoteNull] = useState([props.index, null])
 
   const handleActivateStep = () => {
     dispatch(updateStep1(noteIndex))
-    // props.setSteps(currentSequence.polyCsSteps)
-    console.log(currentSequence)
   }
   const handleDeactivateStep = () => {
     dispatch(updateStep1(noteNull))
-    // props.setSteps(currentSequence.polyCsSteps)
-    console.log(currentSequence)
   }
 
 
   return (
     <>
-    {currentSequence.poly1Steps[props.index] === 'null' ?
+    {currentSequence.poly1Steps[props.index] === null ?
     props.playHead === props.index ?
     <>
       <div className='synthStep playHead' onClick={() => handleActivateStep()}>

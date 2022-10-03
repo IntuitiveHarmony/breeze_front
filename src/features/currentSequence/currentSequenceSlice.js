@@ -26,7 +26,6 @@ const initialState = {}
 //  EDIT CURRENT SEQUENCE IN DATABASE
 //-----------------------------------------------
 export const updateSequence = createAsyncThunk('currentSequence/editSequence', async (editedSequence) => {
-  console.log(editedSequence)
   try {
     const response = await axios.put(`${SEQUENCES_URL}/${editedSequence.id}`, editedSequence)
     return response.data
@@ -43,24 +42,6 @@ const currentSequenceSlice = createSlice({
     loadCurrentSequence: {
       reducer(state, action) {
         state.currentSequence = action.payload
-
-        // action.payload.poly0Steps.map((step, index) => {
-        //   if (step === 'null') {
-        //
-        //     step = null
-        //     // console.log(step)
-        //     // console.log(index)
-        //     // console.log(state.currentSequence.poly0Steps)
-        //     state.currentSequence.poly0Steps[index] = step
-        //     // console.log(state.currentSrquence.poly0steps)
-        //     // state.currentSequence.poly0Steps = [...state.currentSequence.poly0Steps, [step]]
-        //   } else {
-        //     state.currentSequence.poly0Steps[index] = step
-        //     console.log(step)
-        //     // state.currentSequence.poly0Steps = [...state.currentSequence.poly0Steps, [step]]
-        //   }
-        // })
-
       }
     },
     fixNull: {
@@ -68,6 +49,34 @@ const currentSequenceSlice = createSlice({
         state.currentSequence.poly0Steps.map((step, index) => {
             if (step === 'null') {
               step = null
+              state.currentSequence.poly0Steps[index] = step
+            } else {
+              state.currentSequence.poly0Steps[index] = step
+            }
+        })
+        state.currentSequence.poly1Steps.map((step, index) => {
+            if (step === 'null') {
+              step = null
+              state.currentSequence.poly1Steps[index] = step
+            } else {
+              state.currentSequence.poly1Steps[index] = step
+            }
+        })
+        state.currentSequence.poly2Steps.map((step, index) => {
+            if (step === 'null') {
+              step = null
+              state.currentSequence.poly2Steps[index] = step
+            } else {
+              state.currentSequence.poly2Steps[index] = step
+            }
+        })
+      }
+    },
+    unNull: {
+      reducer(state, action) {
+        state.currentSequence.poly0Steps.map((step, index) => {
+            if (step == null) {
+              step = 'null'
               console.log(step)
               state.currentSequence.poly0Steps[index] = step
             } else {
@@ -76,8 +85,8 @@ const currentSequenceSlice = createSlice({
             }
         })
         state.currentSequence.poly1Steps.map((step, index) => {
-            if (step === 'null') {
-              step = null
+            if (step == null) {
+              step = 'null'
               console.log(step)
               state.currentSequence.poly1Steps[index] = step
             } else {
@@ -86,8 +95,8 @@ const currentSequenceSlice = createSlice({
             }
         })
         state.currentSequence.poly2Steps.map((step, index) => {
-            if (step === 'null') {
-              step = null
+            if (step == null) {
+              step = 'null'
               console.log(step)
               state.currentSequence.poly2Steps[index] = step
             } else {
@@ -132,7 +141,7 @@ const currentSequenceSlice = createSlice({
     },
     addStep: {
       reducer(state, action) {
-        state.currentSequence.poly0Steps.push('null')
+        state.currentSequence.poly0Steps.push(null)
       }
     },
     removeStep1: {
@@ -142,7 +151,7 @@ const currentSequenceSlice = createSlice({
     },
     addStep1: {
       reducer(state, action) {
-        state.currentSequence.poly1Steps.push('null')
+        state.currentSequence.poly1Steps.push(null)
       }
     },removeStep2: {
       reducer(state, action) {
@@ -151,7 +160,7 @@ const currentSequenceSlice = createSlice({
     },
     addStep2: {
       reducer(state, action) {
-        state.currentSequence.poly2Steps.push('null')
+        state.currentSequence.poly2Steps.push(null)
       }
     }
   }
@@ -163,6 +172,6 @@ const currentSequenceSlice = createSlice({
 export const selectCurrentSequence = (state) => state.currentSequence.currentSequence
 // this will put the current state in the store
 
-export const { loadCurrentSequence, changeTempo, changeName, updateStep, updateStep1, updateStep2, addStep, addStep1, addStep2, removeStep, removeStep1, removeStep2, fixNull } = currentSequenceSlice.actions
+export const { loadCurrentSequence, changeTempo, changeName, updateStep, updateStep1, updateStep2, addStep, addStep1, addStep2, removeStep, removeStep1, removeStep2, fixNull, unNull } = currentSequenceSlice.actions
 
 export default currentSequenceSlice.reducer

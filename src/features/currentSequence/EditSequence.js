@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { nanoid } from '@reduxjs/toolkit'
 
 import { selectSequenceById, selectAllSequences } from '../sequences/sequencesSlice'
-import { selectCurrentSequence, changeName, updateSequence } from '../currentSequence/currentSequenceSlice'
+import { selectCurrentSequence, changeName, updateSequence, unNull, fixNull } from '../currentSequence/currentSequenceSlice'
 
 
 const EditSequenceForm = () => {
@@ -43,7 +43,7 @@ const EditSequenceForm = () => {
             <label htmlFor="name">Update Name: </label>
             <input type='text' name='name' defaultValue={sequenceName} onChange={handleUpdateName} />
             <br/>
-            <button onClick={() => handleUpdateSequence()} >Update Sequence</button>
+            <button onMouseOver={() => dispatch(unNull())} onMouseOut={() => dispatch(fixNull())} onClick={() => handleUpdateSequence()} >Update Sequence</button>
       </details>
     )
 }
