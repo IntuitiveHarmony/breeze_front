@@ -59,17 +59,25 @@
 10/1/22  
 -Polishing CRUD functions
 -CSS
--time for a piano roll
+-time for a piano roll - made piano roll
 
-To do: 
-1. make a ternary for piano roll
 
-2. If polysynth doesn't work, download piano sample, which I did already but it sucks (check my library on FL tomorrow), and use the Tone.player to simulate each note for either a piano roll or the actual polysynth using:
-  const function = () => {
-    const player = new Tone.Player("path).toDestination();
-    player.autostart = true;
-  }
-  -- already tested and it works
+
+Presentation notes
+
+- wanted to make synth sequencer, theres no real guideline.
+- we used react with tone.js, reactronica.js, redux. Started with typescript, quickly learned it we weren't ready for it
+- Reactronica isn't consistent in it's docs, due to the lack of tutorials, plus deprecation of the ones that do exist, there really isn't one "easy" way to do this. 
+
+- The key in what we're doing is Redux and Context
+- REDUX is a GAME OF STATES! This is not documented facts but I found there's only two ways to get audio to play... a callback from a state, or a command in a function. 
+
+- Making the piano roll was easy, did that in one day... yesterday. But getting the web audio api to cooperate was frustrating. Jason figured out the synth in about a day or two. It took me about 4-5 days to get the audio to play.
+
+
+Problems: Python DOES NOT HAVE NULL!!! It has none, it does not have NULL. Jason found that out roughly 3-4 days ago. 
+
+- wanted to make an upload function but couldn't get it to reliably work. 
 
 
 

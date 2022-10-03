@@ -2,21 +2,17 @@ import {useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { selectCurrentSequence } from './features/currentSequence/currentSequenceSlice'
 import { changeTempo } from './features/currentSequence/currentSequenceSlice'
-import { Counter } from './features/counter/Counter';
 import './App.css';
 import axios from 'axios'
 import { Song, Track, Instrument, Effect } from 'reactronica';
-import * as Tone from 'tone'
 import SequencesList from './features/sequences/SequencesList'
 import AddSequenceForm from './features/sequences/AddSequenceForm'
 import EditSequenceForm from './features/currentSequence/EditSequence'
-import Synth from './components/Synth'
 import MonoSynth from './components/MonoSynth'
 import MonoSynth2 from './components/MonoSynth2'
 import PolyBeast0 from './components/PolyBeast0'
 import PolyBeast1 from './components/PolyBeast1'
 import PolyBeast2 from './components/PolyBeast2'
-import SampleKick from './components/SampleKick'
 import Login from './components/Login'
 import Navbar from './components/Navbar';
 import DeleteSequenceForm from './features/sequences/DeleteSequenceForm';
@@ -39,10 +35,10 @@ function App() {
 
   const [sequences, setSequences] = useState([])
   const [isPlaying, setIsPLaying] = useState(false)
-  // const [tempo, setTempo] = useState(40)
   const [volume, setVolume] = useState()
   const [currentUser, setCurrentUser] = useState({})
   const [showPianoRoll, setShowPianoRoll] = useState(false);
+  const [showBeats, setShowBeats] = useState(false);
 
 
   const handleVolume = (e) => {
@@ -159,8 +155,9 @@ function App() {
         <div>
           <PianoRoll />
           <Piano2 /></div>  : null }
+
         <div className='top-container'>
-        <h1 className="beats-title">polyBeats</h1>
+          <h1 className="beats-title">polyBeats</h1>
         </div>
         <Provider>
           <div className='beats-container'>

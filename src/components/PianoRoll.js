@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as Tone from 'tone'
 import {
   playC4,
@@ -19,14 +19,13 @@ import {
 
 window.addEventListener("keydown", playNote);
 
-
 const PianoRoll = () => {
-
-    const playGong = () => {
-    const player = new Tone.Player("https://tonejs.github.io/audio/berklee/gong_1.mp3").toDestination();
+    
+    // const playGong = () => {
+    // const player = new Tone.Player("https://tonejs.github.io/audio/berklee/gong_1.mp3").toDestination();
 // play as soon as the buffer is loaded
-    player.autostart = true;
-    }
+    // player.autostart = true;
+    // }
     
 
     
@@ -35,9 +34,9 @@ const PianoRoll = () => {
     <div className='piano-container'>
         <h2>Play Along!</h2>
         <br />
-        <button onClick={playGong}>Play Gong</button>
+        {/* <button onClick={playGong}>Play Gong</button> */}
         <div className="piano-roll">
-        <div className="white-key" onClick={playC4}>A</div>
+        <div className="white-key" onClick={playC4} >A</div>
         <div className="black-key" onClick={playDb4}>W</div>
         <div className="white-key" onClick={playD4}>S</div>
         <div className="black-key" onClick={playEb4}>E</div>
