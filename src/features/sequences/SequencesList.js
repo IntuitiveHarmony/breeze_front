@@ -4,7 +4,7 @@ import {  selectAllSequences,
           getSequencesError,
           fetchSequences,
           selectSequenceById, } from './sequencesSlice'
-import { setCurrentSequence, loadCurrentSequence } from '../currentSequence/currentSequenceSlice'
+import { setCurrentSequence, loadCurrentSequence, fixNull } from '../currentSequence/currentSequenceSlice'
 import { useEffect } from 'react'
 import SequencesExcerpt from './SequencesExcerpt'
 
@@ -59,7 +59,20 @@ const SequencesList = () => {
   const handleSelect = (e) => {
     for (let i = 0; i < sequences.length; i++) {
       if (sequences[i].id == e.target.value) {
+        // let newOne = {...sequences[i]}
+        //
+        // newOne.poly0Steps.map((step, index) => {
+        //   if (step === 'null') {
+        //     step = null
+        //     console.log(step)
+        //     // newOne.poly0Steps[index] = step
+        //   } else {
+        //     // newOne.poly0Steps[index] = step
+        //     console.log(step)
+        //   }
+        // })
         dispatch(loadCurrentSequence(sequences[i]))
+        dispatch(fixNull())
       }
     }
   }

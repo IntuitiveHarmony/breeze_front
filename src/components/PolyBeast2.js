@@ -57,6 +57,9 @@ const PolyBeast2 = () => {
     <>
     {currentSequence ? <>
       <Track steps={currentSequence.poly2Steps} volume={monoVolume} onStepPlay={(step, index) => {
+        if (step.name == 'null') {
+              step = null
+            }
           setPlayHead(index)
           console.log(step, index);
         }}>
