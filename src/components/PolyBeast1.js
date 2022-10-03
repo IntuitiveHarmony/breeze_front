@@ -10,7 +10,7 @@ const PolyBeast1 = () => {
   const currentSequence = useSelector(selectCurrentSequence)
 
 
-  const [note, setNote] = useState('F#3')
+  const [note, setNote] = useState('F#2')
   const [disableRemove, setDisableRemove] = useState(false)
   const [disableAdd, setDisableAdd] = useState(false)
   const [playHead, setPlayHead] = useState(1)
@@ -32,7 +32,6 @@ const PolyBeast1 = () => {
   //-------------------------------------------
   const handleAddStep = () => {
     dispatch(addStep1())
-    console.log(currentSequence)
     if (currentSequence.poly1Steps.length === 15) {
       setDisableAdd(true)
     }
@@ -42,7 +41,6 @@ const PolyBeast1 = () => {
   }
   const handleRemoveStep = () => {
     dispatch(removeStep1())
-    console.log(currentSequence)
     if (currentSequence.poly1Steps.length < 17) {
       setDisableAdd(false)
     }
