@@ -10,7 +10,7 @@ const PolyBeast0 = () => {
   const currentSequence = useSelector(selectCurrentSequence)
 
 
-  const [note, setNote] = useState('C#3')
+  const [note, setNote] = useState('C#2')
   const [disableRemove, setDisableRemove] = useState(false)
   const [disableAdd, setDisableAdd] = useState(false)
   const [playHead, setPlayHead] = useState(0)
@@ -18,14 +18,31 @@ const PolyBeast0 = () => {
   const [monoVolume, setMonoVolume] = useState(-10)
 
   const [steps, setSteps] = useState([])
+  const [steps2, setSteps2] = useState([])
 
-  // if (currentSequence != undefined) {
-  //   const steps2 = currentSequence.steps.map((step) => {
+
+  // currentSequence.poly0Steps.map((step) => {
+  //    if (step === 'null') {
+  //      step = null
+  //      setSteps2([...steps2, step])
+  //    } else {
+  //      setSteps2([...steps2, step])
+  //    }
+  //  })
+  //
+  //
+  //
+  //
+  //
+  // if (currentSequence ) {
+  //   console.log('undefinfedddasf')
+  //   console.log(currentSequence)
+  //   const steps2 = currentSequence.poly0Steps.map.map((step) => {
   //     if (step === 'null') {
   //       step = null
-  //       steps2.push(step)
+  //       setSteps2([...steps2, step])
   //     } else {
-  //       steps2.push(step)
+  //       setSteps2([...steps2, step])
   //     }
   //   })
   // }
@@ -42,7 +59,6 @@ const PolyBeast0 = () => {
   //-------------------------------------------
   const handleAddStep = () => {
     dispatch(addStep())
-    console.log(currentSequence)
     if (currentSequence.poly0Steps.length === 15) {
       setDisableAdd(true)
     }
@@ -52,7 +68,6 @@ const PolyBeast0 = () => {
   }
   const handleRemoveStep = () => {
     dispatch(removeStep())
-    console.log(currentSequence)
     if (currentSequence.poly0Steps.length < 17) {
       setDisableAdd(false)
     }
@@ -68,7 +83,11 @@ const PolyBeast0 = () => {
   return (
     <>
     {currentSequence ? <>
-      <Track steps={steps} volume={monoVolume} onStepPlay={(step, index) => {
+
+      <Track steps={currentSequence.poly0Steps} volume={monoVolume} onStepPlay={(step, index) => {
+        if (step.name == 'null') {
+              step = null
+            }
           setPlayHead(index)
           console.log(step, index);
         }}>

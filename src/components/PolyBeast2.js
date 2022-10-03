@@ -10,7 +10,7 @@ const PolyBeast2 = () => {
   const currentSequence = useSelector(selectCurrentSequence)
 
 
-  const [note, setNote] = useState('D#4')
+  const [note, setNote] = useState('D#3')
   const [disableRemove, setDisableRemove] = useState(false)
   const [disableAdd, setDisableAdd] = useState(false)
   const [playHead, setPlayHead] = useState(1)
@@ -32,7 +32,6 @@ const PolyBeast2 = () => {
   //-------------------------------------------
   const handleAddStep = () => {
     dispatch(addStep2())
-    console.log(currentSequence)
     if (currentSequence.poly2Steps.length === 15) {
       setDisableAdd(true)
     }
@@ -42,7 +41,6 @@ const PolyBeast2 = () => {
   }
   const handleRemoveStep = () => {
     dispatch(removeStep2())
-    console.log(currentSequence)
     if (currentSequence.poly2Steps.length < 17) {
       setDisableAdd(false)
     }
@@ -57,6 +55,9 @@ const PolyBeast2 = () => {
     <>
     {currentSequence ? <>
       <Track steps={currentSequence.poly2Steps} volume={monoVolume} onStepPlay={(step, index) => {
+        if (step.name == 'null') {
+              step = null
+            }
           setPlayHead(index)
           console.log(step, index);
         }}>
