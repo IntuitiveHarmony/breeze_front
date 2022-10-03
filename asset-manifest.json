@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/breeze_front/static/css/main.00b902cb.css",
-    "main.js": "/breeze_front/static/js/main.0b56e482.js",
+    "main.js": "/breeze_front/static/js/main.f31cc0c2.js",
     "static/js/787.a230297f.chunk.js": "/breeze_front/static/js/787.a230297f.chunk.js",
     "static/media/batmanloop1.wav": "/breeze_front/static/media/batmanloop1.2ddb754ee92ca680e0b9.wav",
     "static/media/batmanloop2.wav": "/breeze_front/static/media/batmanloop2.9062bea287272579214e.wav",
@@ -23,11 +23,11 @@
     "static/media/kick2.wav": "/breeze_front/static/media/kick2.199d6d0479752ed15d41.wav",
     "index.html": "/breeze_front/index.html",
     "main.00b902cb.css.map": "/breeze_front/static/css/main.00b902cb.css.map",
-    "main.0b56e482.js.map": "/breeze_front/static/js/main.0b56e482.js.map",
+    "main.f31cc0c2.js.map": "/breeze_front/static/js/main.f31cc0c2.js.map",
     "787.a230297f.chunk.js.map": "/breeze_front/static/js/787.a230297f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.00b902cb.css",
-    "static/js/main.0b56e482.js"
+    "static/js/main.f31cc0c2.js"
   ]
 }
